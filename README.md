@@ -1,72 +1,77 @@
-HEAD
-# my-portfolio
-My personal playground where I experiment with code and showcase my skills. Explore the projects and let me know what you think!
+# 🚀 **My Portfolio** – Where Code Meets Creativity!
 
-![cv](https://github.com/BartoszJarocki/cv/assets/1017620/79bdb9fc-0b20-4d2c-aafe-0526ad4a71d2)
+Welcome to my personal **playground** 🎨 where I experiment with **code, design, and innovation**! Dive into my projects, explore the magic ✨, and let me know your thoughts!
 
-# Minimalist CV [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FBartoszJarocki%2Fcv)
+---
 
-Simple web app that renders minimalist CV with print-friendly layout.
+## 📝 **Minimalist CV** – A Sleek, Print-Ready Web App
 
-Built with Next.js and shadcn/ui, deployed on Vercel.
+A **lightweight**, beautifully designed **CV generator** with a **minimalist touch** and **print-friendly layout** 🖨️.
 
-# Features
+🛠 **Tech Stack**:
+🌟 Built with **Next.js 14, React, TypeScript, Tailwind CSS, Shadcn/ui**  
+🚀 Optimized for **Next.js & Vercel**  
+📱 Fully **Responsive** across devices  
 
-- Setup only takes a few minutes [single config file](./src/data/resume-data.tsx)
-- Built using Next.js 14, React, Typescript, Shadcn/ui, TailwindCss
-- Auto generated Layout
-- Responsive for different devices
-- Optimized for Next.js and Vercel
+---
 
-# Getting Started Locally
+## 🎯 **Why You’ll Love It?**
 
-1. Clone this repository to your local machine:
+✅ **One-time Setup** – Just edit a [single config file](./src/data/resume-data.tsx) 🎯  
+✅ **Auto-Generated Layout** – No manual designing required 🎨️  
+✅ **Blazing Fast** – Optimized for Next.js ⚡  
+✅ **Perfect for Developers & Designers** – Clean, elegant, and customizable  
 
-   ```bash
-   git clone https://github.com/BartoszJarocki/cv.git
-   ```
+---
 
-2. Move to the cloned directory
+## 🛠️ **Getting Started Locally**
 
-   ```bash
-   cd cv
-   ```
+1⃣ **Clone this repo** 🛠️  
+```bash
+git clone https://github.com/your-username/my-portfolio.git
+```  
 
-3. Install dependencies:
+2⃣ **Move into the project folder** 📂  
+```bash
+cd my-portfolio
+```  
 
-   ```bash
-   yarn install
-   ```
+3⃣ **Install dependencies** 📦  
+```bash
+yarn install
+```  
 
-4. Start the local Server:
+4⃣ **Run the development server** 🚀  
+```bash
+yarn dev
+```  
 
-   ```bash
-   yarn dev
-   ```
+5⃣ **Customize Your CV** ✏️  
+Open the [Config file](./src/data/resume-data.tsx) and personalize it!  
 
-5. Open the [Config file](./src/data/resume-data.tsx) and make changes
+---
 
-# Run with Docker
+## 🐓 **Run with Docker**
 
-Build the container
-
-```
+🔨 **Build the container**  
+```bash
 docker compose build
-```
+```  
 
-Run the container
-
-```
+🚀 **Run the container**  
+```bash
 docker compose up -d
-```
+```  
 
-Stop the Container
+⛔ **Stop the container**  
+```bash
+docker compose down
+```  
 
-```
-docker compose down 
-```
+---
 
-# License
+## 📝 **License**  
+🔓 Open-source under the **[MIT License](https://choosealicense.com/licenses/mit/)**  
 
-[MIT](https://choosealicense.com/licenses/mit/)
->>>>>>> 0371850 (Initial commit)
+💡 **Feel free to fork, modify, and contribute!** 🚀🔥
+
