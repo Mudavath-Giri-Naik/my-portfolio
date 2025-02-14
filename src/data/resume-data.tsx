@@ -90,7 +90,7 @@ export const RESUME_DATA = {
   ],
   projects: [
     {
-      title: "Consultly",
+      title: "BeyondMyCampus",
       techStack: [
         "Side Project",
         "TypeScript",
@@ -99,11 +99,11 @@ export const RESUME_DATA = {
         "GraphQL",
         "WebRTC",
       ],
-      description: "A platform to build and grow your online business",
+      description: "A platform where students can collaborate with other college students for Growth and Team Work",
       logo: ConsultlyLogo,
       link: {
-        label: "consultly.com",
-        href: "https://consultly.com/",
+        label: "BeyondMyCampus",
+        href: "https://beyondcampus.netlify.app/",
       },
     },
 
