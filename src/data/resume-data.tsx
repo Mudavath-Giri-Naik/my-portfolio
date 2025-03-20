@@ -23,11 +23,15 @@ export const RESUME_DATA = {
   name: "Giri Naik",
   initials: "GN",
   location: "Vizag, India, IN",
-  locationLink: "https://www.google.com/maps/place/Wrocław",
+  locationLink: "https://maps.app.goo.gl/UXwe2vHuUVVExzBb6?g_st=aw",
   about:
     "CS Undergrad Specializing in AI/ML, Algorithmic Problem-Solving, and MERN Full Stack Developer. Exploring edge AI, federated learning, and blockchain-integrated AI solutions.",
   summary:
-    "Full Stack Developer & AI/ML enthusiast, bridging intelligent systems with scalable web solutions. Proficient in React, Node.js, and algorithm optimization, with a strong focus on Web3, blockchain, and real-world AI applications.",
+    "Full Stack Developer & AI/ML enthusiast, bridging intelligent systems with scalable web solutions. Proficient in React, Node.js, and algorithm optimization, with a strong focus on Web3, blockchain, and real-world AI applications.\n\n" +
+    "🚀 Full-Stack Developer | AI & Web3 Enthusiast | Active Open-Source Contributor\n\n" +
+    "🔹 Building Scalable Solutions with MERN & Next.js\n" +
+    "🔹 Strong Problem-Solving & DSA Skills (LeetCode, Codeforces)\n" +
+    "🔹 Microsoft Learn Student Ambassador (MLSA) | Community Mentor",
   avatarUrl: "https://avatars.githubusercontent.com/u/170388293?s=400&u=7460f359310921be750c63199b5ff997c986d267&v=4",
   personalWebsiteUrl: "https://jarocki.me",
   contact: {
