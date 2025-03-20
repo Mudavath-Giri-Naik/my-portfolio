@@ -84,17 +84,50 @@ export const RESUME_DATA = {
 
   ],
   skills: [
+    "C/C++",
+    "Java",
     "JavaScript",
     "TypeScript",
-    "React/Next.js/Remix",
-    "Node.js",
     "Python",
-    "Java",
-    
+    "SQL",
+    "Data Structures and Algorithms",
+    "React.js",
+    "Next.js",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "Redux",
+    "Tailwind CSS",
+    "REST API Development",
+    "Authentication & Authorization (JWT, OAuth)",
+    "Docker",
+    "Cloud Computing (AWS, GCP)",
+    "Git & GitHub",
+    "Postman,"
   ],
+  
   projects: [
     {
-      title: "BeyondMyCampus",
+      title: "Resourcian",
+      techStack: [
+        "Side Project",
+        "MERN",
+        "TypeScript",
+        "Next.js",
+        "Node.js",
+        "MongoDB",
+        "AI/ML",
+        "Web Scraping",
+      ],
+      description: "A one-stop platform providing structured roadmaps, AI-powered resume analysis, and real-time opportunities for students.",
+      
+      link: {
+        label: "Resourcian",
+        href: "https://resourcian.netlify.app/",
+      }
+    },
+    {
+      title: "BeyondTheCampus",
       techStack: [
         "Side Project",
         "TypeScript",
@@ -112,4 +145,40 @@ export const RESUME_DATA = {
     },
 
   ],
+  COMMUNITY_DATA : [
+    {
+      organization: "Google Developer Groups (GDG) Vizag",
+      link: "https://gdg.community.dev/gdg-vizag/",
+      badges: ["Active Member", "Speaker", "Volunteer"],
+      role: "Community Member",
+      logo: "GDGLogo",
+      start: "August 2023",
+      end: "Present",
+      description:
+        "Actively participated in GDG Vizag events, networking with industry professionals, and contributing to tech discussions.",
+    },
+    {
+      organization: "Microsoft Learn Student Ambassadors",
+      link: "https://studentambassadors.microsoft.com/",
+      badges: ["Student Ambassador"],
+      role: "Student Ambassador",
+      logo: "MicrosoftLogo",
+      start: "November 2024",
+      end: "Present",
+      description:
+        "Engaged in technical workshops, mentoring students, and promoting learning resources from Microsoft.",
+    },
+    {
+      organization: "Hackathons & Ideathons",
+      link: "",
+      badges: ["Participant", "Finalist", "Winner"],
+      role: "Hackathon Enthusiast",
+      logo: "HackathonLogo",
+      start: "2023",
+      end: "Present",
+      description:
+        "Actively participated in multiple hackathons, ideathons, and technical competitions, collaborating with peers to develop innovative solutions.",
+    },
+  ],
+
 } as const;
