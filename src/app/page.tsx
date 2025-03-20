@@ -18,7 +18,7 @@ export default function Page() {
   return (
     <main className="relative mx-auto w-full scroll-my-12 overflow-auto p-4 print:p-12 md:p-16 bg-[#000000]">
       
-      <section className="mx-auto w-full max-w-2xl space-y-8 bg-white print:space-y-6 bg-[#000000] ">
+      <section className="mx-auto w-full max-w-2xl space-y-8  print:space-y-6 bg-[#000000] ">
         <div className="flex items-center justify-between">
           <div className="flex-1 space-y-1.5">
             <h1 className="text-4xl text-blue-600  font-bold">{RESUME_DATA.name}</h1>
