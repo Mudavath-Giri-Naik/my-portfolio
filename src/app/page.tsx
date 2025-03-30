@@ -1,3 +1,5 @@
+"use client";
+
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -8,16 +10,16 @@ import { GlobeIcon, MailIcon, PhoneIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { RESUME_DATA } from "@/data/resume-data";
 import { ProjectCard } from "@/components/project-card";
+import { MoonIcon, SunIcon } from "lucide-react";
+import { useEffect, useState } from "react";
 
-export const metadata: Metadata = {
-  title: `${RESUME_DATA.name} | ${RESUME_DATA.about}`,
-  description: RESUME_DATA.summary,
-};
+
 
 export default function Page() {
+ 
   return (
     <main className="relative mx-auto w-full scroll-my-12 overflow-auto p-4 print:p-12 md:p-16 bg-[#000000]">
-      
+          
       <section className="mx-auto w-full max-w-2xl space-y-8  print:space-y-6 bg-[#000000] ">
         <div className="flex items-center justify-between">
           <div className="flex-1 space-y-1.5">
