@@ -71,40 +71,33 @@ export const RESUME_DATA = {
   ],
   work: [
     {
-      company: "EduSkills",
-      link: "https://parabol.co",
+      company: "AOSSIE",
+      link: "https://aossie.org/",
       badges: ["Remote"],
       title: "Backend Development",
       logo: ParabolLogo,
       start: "April 2024",
       end: "June 2024",
       description:
-        "Worked as a Backend Developer, developing and optimizing backend services for an Android application.",
+        "Contributed to DebateAI, an AI-driven debate platform with real-time communication and structured debate formats.",
     },
 
   ],
-  skills: [
-    "C/C++",
-    "Java",
-    "JavaScript",
-    "TypeScript",
-    "Python",
-    "SQL",
-    "Data Structures and Algorithms",
-    "React.js",
-    "Next.js",
-    "Node.js",
-    "Express.js",
-    "MongoDB",
-    "Redux",
-    "Tailwind CSS",
-    "REST API Development",
-    "Authentication & Authorization (JWT, OAuth)",
-    "Docker",
-    "Cloud Computing (AWS, GCP)",
-    "Git & GitHub",
-    "Postman,"
-  ],
+  skills:[
+  {
+    Languages: ["C/C++", "Java", "JavaScript", "TypeScript", "Python", "SQL"],
+    Frameworks: ["React.js", "Next.js", "Node.js", "Express.js"],
+    Libraries: ["Redux", "Tailwind CSS"],
+    Tools: ["Docker", "Git & GitHub", "Postman"],
+    Other: [
+      "Data Structures and Algorithms",
+      "REST API Development",
+      "Authentication (JWT, OAuth)",
+      "Cloud Computing (AWS, GCP)"
+    ]
+  } 
+],
+
   
   projects: [
     {

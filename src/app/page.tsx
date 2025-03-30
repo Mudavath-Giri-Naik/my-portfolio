@@ -72,34 +72,44 @@ export default function Page() {
 </Avatar>
 
         </div>
-
         <Section>
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-800 dark:text-slate-100 mb-4 border-l-4 border-blue-600 pl-3">
-            Skills
-          </h2>
-          <div className="flex flex-wrap gap-1">
-            {RESUME_DATA.skills.map((skill) => (
-              <Badge key={skill}>{skill}</Badge>
+  <h2 className="text-xl md:text-2xl font-semibold text-black dark:text-slate-100 mb-4 border-l-4 border-blue-500 pl-3">
+    Skills
+  </h2>
+  <div className="bg-gray-900 p-4 rounded-lg shadow-md">
+    {Object.entries(RESUME_DATA.skills[0]).map(([category, skills]) => (
+      <div key={category} className="mb-4">
+        <h3 className="text-lg font-semibold text-blue-400">{category}</h3>
+        <div className="flex flex-wrap gap-2 mt-2">
+          {Array.isArray(skills) &&
+            skills.map((skill: string) => (
+              <span
+                key={skill}
+                className="bg-blue-600 text-white text-sm px-2.5 py-1 rounded-md shadow"
+              >
+                {skill}
+              </span>
             ))}
-          </div>
-        </Section>
+        </div>
+      </div>
+    ))}
+  </div>
+</Section>
 
-        <Section className="print-force-new-page scroll-mb-16">
-  {/* Section Heading */}
-  <h2 className="text-2xl md:text-3xl font-bold text-slate-800 text-yellow-50 mb-4 border-l-4 border-blue-600 pl-3">
+
+
+
+<Section className="print-force-new-page scroll-mb-16">
+  <h2 className="text-2xl md:text-3xl font-bold text-slate-800 dark:text-slate-100 mb-4 border-l-4 border-blue-600 pl-3">
     Projects
   </h2>
-
-  {/* Project Cards Grid */}
-  <div className="-mx-3 grid grid-cols-1 gap-3 print:grid-cols-3 print:gap-2 md:grid-cols-2 lg:grid-cols-3">
+  <div className="w-full max-w-6xl mx-auto grid grid-cols-1 gap-3 print:grid-cols-3 print:gap-2 md:grid-cols-2 lg:grid-cols-3 lg:gap-4 lg:w-full lg:mx-0">
     {RESUME_DATA.projects.map((project) => (
       <div
         key={project.title}
-        className="relative bg-white dark:bg-gray-900 rounded-lg shadow-md p-4 border border-gray-200 dark:border-gray-700 transition-transform hover:scale-[1.02] hover:shadow-lg"
+        className="relative dark:bg-gray-900 rounded-lg shadow-md p-4 border border-gray-200 dark:border-gray-700 w-full h-full"
       >
-        {/* Project Title + Live Button (Fixed Position) */}
         <div className="flex justify-between items-center">
-          {/* Clickable Title */}
           <a
             href={"link" in project ? project.link.href : "#"}
             target="_blank"
@@ -108,8 +118,6 @@ export default function Page() {
           >
             {project.title}
           </a>
-
-          {/* Live Button (Fixed) */}
           {"link" in project && project.link.href && (
             <a
               href={project.link.href}
@@ -121,11 +129,7 @@ export default function Page() {
             </a>
           )}
         </div>
-
-        {/* Project Description */}
         <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">{project.description}</p>
-
-        {/* Tech Stack Tags */}
         <div className="mt-3 flex flex-wrap gap-2">
           {project.techStack.map((tag) => (
             <span key={tag} className="text-xs bg-blue-100 dark:bg-blue-800 text-blue-600 dark:text-white px-2 py-1 rounded">
@@ -142,67 +146,55 @@ export default function Page() {
 
 
 
-        <Section>
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-800 dark:text-slate-100 mb-4 border-l-4 border-blue-600 pl-3">
-            Education
-          </h2>
-          {RESUME_DATA.education.map((education) => (
-            <Card key={education.school}>
-              <CardHeader>
-                <div className="flex items-center justify-between gap-x-2 text-base">
-                  <h3 className="font-semibold leading-none">{education.school}</h3>
-                  <div className="text-sm tabular-nums text-gray-500">
-                    {education.start} - {education.end}
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent className="mt-2">{education.degree}</CardContent>
-            </Card>
-          ))}
-        </Section>
+{/* Education Section */}
+<Section>
+        <h2 className="text-2xl md:text-3xl font-bold text-slate-800 dark:text-slate-100 mb-4 border-l-4 border-blue-600 pl-3">
+          Education
+        </h2>
+        {RESUME_DATA.education.map((education) => (
+          <div key={education.school} className="dark:bg-gray-900 rounded-lg shadow-md p-4 border border-gray-200 dark:border-gray-700">
+            <div className="flex items-center justify-between">
+              <h3 className="font-semibold">{education.school}</h3>
+              <div className="text-sm tabular-nums text-gray-500">{education.start} - {education.end}</div>
+            </div>
+            <p className="text-gray-600 dark:text-gray-300 mt-2">{education.degree}</p>
+          </div>
+        ))}
+      </Section>
+      {/* Open Source Contributions Section */}
+      <Section>
+        <h2 className="text-2xl md:text-3xl font-bold text-slate-800 dark:text-slate-100 mb-4 border-l-4 border-blue-600 pl-3">
+          Open Source Contributions
+        </h2>
+        {RESUME_DATA.work.map((work) => (
+          <div key={work.company} className="dark:bg-gray-900 rounded-lg shadow-md p-4 border border-gray-200 dark:border-gray-700">
+            <div className="flex justify-between items-center">
+              <a className="font-semibold hover:text-blue-600 transition-colors" href={work.link}>
+                {work.company}
+              </a>
+              <div className="text-sm tabular-nums text-gray-500">{work.start} - {work.end ?? "Present"}</div>
+            </div>
+            <p className="text-gray-600 dark:text-gray-300 mt-2">{work.description}</p>
+          </div>
+        ))}
+      </Section>
 
-        <Section>
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-800 dark:text-slate-100 mb-4 border-l-4 border-blue-600 pl-3">
-            Open Source Contributions
-          </h2>
-          {RESUME_DATA.work.map((work) => (
-            <Card key={work.company}>
-              <CardHeader>
-                <div className="flex items-center justify-between gap-x-2 text-base">
-                  <h3 className="font-semibold leading-none">
-                    <a className="hover:text-blue-600 transition-colors" href={work.link}>
-                      {work.company}
-                    </a>
-                  </h3>
-                  <div className="text-sm tabular-nums text-gray-500">
-                    {work.start} - {work.end ?? "Present"}
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent className="mt-2">{work.description}</CardContent>
-            </Card>
-          ))}
-        </Section>
-
-        <Section>
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-100 dark:text-slate-100 mb-4 border-l-4 border-blue-600 pl-3">
-            Community Involvement and Networking
-          </h2>
-          <Card className="border border-slate-200 dark:border-slate-800 shadow-md rounded-lg ">
-            <CardContent className=" space-y-6">
-              {RESUME_DATA.COMMUNITY_DATA.map((community) => (
-                <div key={community.organization} className="border-b border-slate-100 dark:border-slate-100 pb-4 last:border-b-0">
-                  <h4 className="text-lg font-semibold hover:text-blue-600  dark:text-slate-100 transition-colors">
-                    <a href={community.link} target="_blank" rel="noopener noreferrer">
-                      {community.organization}
-                    </a>
-                  </h4>
-                  <p className="text-slate-600 dark:text-slate-400">{community.role}</p>
-                </div>
-              ))}
-            </CardContent>
-          </Card>
-        </Section>
+      {/* Community Involvement Section */}
+      <Section>
+        <h2 className="text-2xl md:text-3xl font-bold text-slate-800 dark:text-slate-100 mb-4 border-l-4 border-blue-600 pl-3">
+          Community Involvement and Networking
+        </h2>
+        {RESUME_DATA.COMMUNITY_DATA.map((community) => (
+          <div key={community.organization} className="dark:bg-gray-900 rounded-lg shadow-md p-4 border border-gray-200 dark:border-gray-700">
+            <div className="flex justify-between items-center">
+              <a href={community.link} target="_blank" rel="noopener noreferrer" className="font-semibold hover:text-blue-600 dark:text-slate-100 transition-colors">
+                {community.organization}
+              </a>
+            </div>
+            <p className="text-gray-600 dark:text-gray-300 mt-2">{community.role}</p>
+          </div>
+        ))}
+      </Section>
       </section>
     </main>
   );
