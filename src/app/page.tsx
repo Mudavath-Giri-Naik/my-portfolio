@@ -1,17 +1,12 @@
 "use client";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Card, CardHeader, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { CommandMenu } from "@/components/command-menu";
-import { Metadata } from "next";
 import { Section } from "@/components/ui/section";
 import { GlobeIcon, MailIcon, PhoneIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { RESUME_DATA } from "@/data/resume-data";
-import { ProjectCard } from "@/components/project-card";
-import { MoonIcon, SunIcon } from "lucide-react";
-import { useEffect, useState } from "react";
+
 
 
 
@@ -29,7 +24,7 @@ export default function Page() {
             </p>
             <p className="max-w-md items-center text-pretty font-mono text-xs text-muted-foreground">
               <a
-                className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline text-blue-400"
+                className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline text-blue-600"
                 href={RESUME_DATA.locationLink}
                 target="_blank"
               >
@@ -37,7 +32,7 @@ export default function Page() {
                 {RESUME_DATA.location}
               </a>
             </p>
-            <div className="flex gap-x-1 pt-1 font-mono text-sm text-muted-foreground print:hidden">
+            <div className="flex gap-x-1 pt-1 font-mono text-sm text-muted-foreground print:hidden ">
               {RESUME_DATA.contact.email ? (
                 <Button className="size-10" variant="outline" size="icon" asChild>
                   <a href={`mailto:${RESUME_DATA.contact.email}`}>
@@ -46,7 +41,7 @@ export default function Page() {
                 </Button>
               ) : null}
               {RESUME_DATA.contact.tel ? (
-                <Button className="size-10" variant="outline" size="icon" asChild>
+                <Button className="size-10 " variant="outline" size="icon" asChild>
                   <a href={`tel:${RESUME_DATA.contact.tel}`}>
                     <PhoneIcon className="size-4" />
                   </a>
@@ -75,7 +70,7 @@ export default function Page() {
 
         </div>
         <Section>
-  <h2 className="text-xl md:text-2xl font-semibold text-black dark:text-slate-100 mb-4 border-l-4 border-blue-500 pl-3">
+  <h2 className="text-xl md:text-2xl font-semibold text-slate-100 mb-4 border-l-4 border-blue-500 pl-3">
     Skills
   </h2>
   <div className="bg-gray-900 p-4 rounded-lg shadow-md">
@@ -102,21 +97,21 @@ export default function Page() {
 
 
 <Section className="print-force-new-page scroll-mb-16">
-  <h2 className="text-2xl md:text-3xl font-bold text-slate-800 dark:text-slate-100 mb-4 border-l-4 border-blue-600 pl-3">
+  <h2 className="text-2xl md:text-3xl font-bold  text-slate-100 mb-4 border-l-4 border-blue-600 pl-3">
     Projects
   </h2>
   <div className="w-full max-w-6xl mx-auto grid grid-cols-1 gap-3 print:grid-cols-3 print:gap-2 md:grid-cols-2 lg:grid-cols-3 lg:gap-4 lg:w-full lg:mx-0">
     {RESUME_DATA.projects.map((project) => (
       <div
         key={project.title}
-        className="relative dark:bg-gray-900 rounded-lg shadow-md p-4 border border-gray-200 dark:border-gray-700 w-full h-full"
+        className="relative bg-gray-900 rounded-lg shadow-md p-4 border border-gray-200 border-gray-700 w-full h-full"
       >
         <div className="flex justify-between items-center">
           <a
             href={"link" in project ? project.link.href : "#"}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-lg font-semibold text-gray-800 dark:text-white hover:underline truncate"
+            className="text-lg font-semibold text-gray-800 text-white hover:underline truncate"
           >
             {project.title}
           </a>
@@ -131,10 +126,10 @@ export default function Page() {
             </a>
           )}
         </div>
-        <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">{project.description}</p>
+        <p className="text-sm text-gray-600 text-gray-300 mt-1">{project.description}</p>
         <div className="mt-3 flex flex-wrap gap-2">
           {project.techStack.map((tag) => (
-            <span key={tag} className="text-xs bg-blue-100 dark:bg-blue-800 text-blue-600 dark:text-white px-2 py-1 rounded">
+            <span key={tag} className="text-xs  bg-blue-800 text-blue-600 text-white px-2 py-1 rounded">
               {tag}
             </span>
           ))}
@@ -150,50 +145,50 @@ export default function Page() {
 
 {/* Education Section */}
 <Section>
-        <h2 className="text-2xl md:text-3xl font-bold text-slate-800 dark:text-slate-100 mb-4 border-l-4 border-blue-600 pl-3">
+        <h2 className="text-2xl md:text-3xl font-bold text-slate-100 text-slate-100 mb-4 border-l-4 border-blue-600 pl-3">
           Education
         </h2>
         {RESUME_DATA.education.map((education) => (
-          <div key={education.school} className="dark:bg-gray-900 rounded-lg shadow-md p-4 border border-gray-200 dark:border-gray-700">
+          <div key={education.school} className="bg-gray-900 text-gray-200 rounded-lg shadow-md p-4 border  border-gray-700">
             <div className="flex items-center justify-between">
               <h3 className="font-semibold">{education.school}</h3>
               <div className="text-sm tabular-nums text-gray-500">{education.start} - {education.end}</div>
             </div>
-            <p className="text-gray-600 dark:text-gray-300 mt-2">{education.degree}</p>
+            <p className=" text-gray-300 mt-2">{education.degree}</p>
           </div>
         ))}
       </Section>
       {/* Open Source Contributions Section */}
       <Section>
-        <h2 className="text-2xl md:text-3xl font-bold text-slate-800 dark:text-slate-100 mb-4 border-l-4 border-blue-600 pl-3">
+        <h2 className="text-2xl md:text-3xl font-bold text-slate-100 mb-4 border-l-4 border-blue-600 pl-3">
           Open Source Contributions
         </h2>
         {RESUME_DATA.work.map((work) => (
-          <div key={work.company} className="dark:bg-gray-900 rounded-lg shadow-md p-4 border border-gray-200 dark:border-gray-700">
+          <div key={work.company} className="bg-gray-900 rounded-lg shadow-md p-4 border text-gray-200 border-gray-700">
             <div className="flex justify-between items-center">
               <a className="font-semibold hover:text-blue-600 transition-colors" href={work.link}>
                 {work.company}
               </a>
               <div className="text-sm tabular-nums text-gray-500">{work.start} - {work.end ?? "Present"}</div>
             </div>
-            <p className="text-gray-600 dark:text-gray-300 mt-2">{work.description}</p>
+            <p className=" text-gray-300 mt-2">{work.description}</p>
           </div>
         ))}
       </Section>
 
       {/* Community Involvement Section */}
       <Section>
-        <h2 className="text-2xl md:text-3xl font-bold text-slate-800 dark:text-slate-100 mb-4 border-l-4 border-blue-600 pl-3">
+        <h2 className="text-2xl md:text-3xl font-bold  text-slate-100 mb-4 border-l-4 border-blue-600 pl-3">
           Community Involvement and Networking
         </h2>
         {RESUME_DATA.COMMUNITY_DATA.map((community) => (
-          <div key={community.organization} className="dark:bg-gray-900 rounded-lg shadow-md p-4 border border-gray-200 dark:border-gray-700">
+          <div key={community.organization} className="bg-gray-900 rounded-lg shadow-md p-4 border  border-gray-700">
             <div className="flex justify-between items-center">
-              <a href={community.link} target="_blank" rel="noopener noreferrer" className="font-semibold hover:text-blue-600 dark:text-slate-100 transition-colors">
+              <a href={community.link} target="_blank" rel="noopener noreferrer" className="font-semibold hover:text-blue-600 text-slate-100 transition-colors">
                 {community.organization}
               </a>
             </div>
-            <p className="text-gray-600 dark:text-gray-300 mt-2">{community.role}</p>
+            <p className=" text-gray-300 mt-2">{community.role}</p>
           </div>
         ))}
       </Section>
