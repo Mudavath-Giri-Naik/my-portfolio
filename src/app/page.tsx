@@ -63,10 +63,14 @@ export default function Page() {
             </div>
           </div>
 
-          <Avatar className="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-40 lg:h-40 xl:w-40 xl:h-40">
-  <AvatarImage alt={RESUME_DATA.name} src={RESUME_DATA.avatarUrl} />
-  <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
-</Avatar>
+          <div className="p-2 sm:p-3 md:p-4 bg-white dark:bg-gray-900 rounded-xl shadow-md flex items-center justify-center">
+  <Avatar className="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-40 lg:h-40 xl:w-40 xl:h-40 border border-gray-300 dark:border-gray-700 rounded-lg shadow-sm">
+    <AvatarImage alt={RESUME_DATA.name} src={RESUME_DATA.avatarUrl} />
+    <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
+  </Avatar>
+</div>
+
+
 
         </div>
         <Section>
@@ -104,7 +108,7 @@ export default function Page() {
     {RESUME_DATA.projects.map((project) => (
       <div
         key={project.title}
-        className="relative bg-gray-900 rounded-lg shadow-md p-4 border border-gray-200 border-gray-700 w-full h-full"
+        className="relative bg-gray-900 rounded-lg shadow-md p-4 border  border-gray-700 w-full h-full"
       >
         <div className="flex justify-between items-center">
           <a
@@ -126,10 +130,10 @@ export default function Page() {
             </a>
           )}
         </div>
-        <p className="text-sm text-gray-600 text-gray-300 mt-1">{project.description}</p>
+        <p className="text-sm  text-gray-300 mt-1">{project.description}</p>
         <div className="mt-3 flex flex-wrap gap-2">
           {project.techStack.map((tag) => (
-            <span key={tag} className="text-xs  bg-blue-800 text-blue-600 text-white px-2 py-1 rounded">
+            <span key={tag} className="text-xs  bg-blue-800  text-white px-2 py-1 rounded">
               {tag}
             </span>
           ))}
@@ -145,7 +149,7 @@ export default function Page() {
 
 {/* Education Section */}
 <Section>
-        <h2 className="text-2xl md:text-3xl font-bold text-slate-100 text-slate-100 mb-4 border-l-4 border-blue-600 pl-3">
+        <h2 className="text-2xl md:text-3xl font-bold  text-slate-100 mb-4 border-l-4 border-blue-600 pl-3">
           Education
         </h2>
         {RESUME_DATA.education.map((education) => (
@@ -154,7 +158,7 @@ export default function Page() {
               <h3 className="font-semibold">{education.school}</h3>
               <div className="text-sm tabular-nums text-gray-500">{education.start} - {education.end}</div>
             </div>
-            <p className=" text-gray-300 mt-2">{education.degree}</p>
+            <p className=" text-blue-600 mt-2">{education.degree}</p>
           </div>
         ))}
       </Section>
@@ -171,7 +175,7 @@ export default function Page() {
               </a>
               <div className="text-sm tabular-nums text-gray-500">{work.start} - {work.end ?? "Present"}</div>
             </div>
-            <p className=" text-gray-300 mt-2">{work.description}</p>
+            <p className=" text-blue-600 mt-2">{work.description}</p>
           </div>
         ))}
       </Section>
@@ -188,7 +192,7 @@ export default function Page() {
                 {community.organization}
               </a>
             </div>
-            <p className=" text-gray-300 mt-2">{community.role}</p>
+            <p className=" text-blue-600 mt-2">{community.role}</p>
           </div>
         ))}
       </Section>
