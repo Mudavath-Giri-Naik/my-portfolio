@@ -70,7 +70,7 @@ export default function Page() {
 
         </div>
         <Section>
-  <h2 className="text-xl md:text-2xl font-semibold text-slate-100 mb-4 border-l-4 border-blue-500 pl-3">
+  <h2 className="text-xl md:text-3xl font-semibold text-slate-100 mb-4 border-l-4 border-blue-500 pl-3">
     Skills
   </h2>
   <div className="bg-gray-900 p-4 rounded-lg shadow-md">
