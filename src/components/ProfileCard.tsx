@@ -80,7 +80,7 @@ export default function ProfileCard() {
   const emailHref = emailSocial?.href || emailSocial?.default || 'mailto:example@example.com';
 
   return (
-    <div className="flex flex-col md:flex-row items-center gap-8 w-full max-w-5xl p-8 md:p-14 rounded-3xl shadow-2xl border border-white/30 bg-white/20 backdrop-blur-lg" style={{ boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)' }}>
+    <div className="glass-premium-card flex flex-col md:flex-row items-center gap-8 w-full max-w-5xl p-8 md:p-14" style={{ position: 'relative' }}>
       {/* Profile Image or Avatar */}
       <div className="flex-shrink-0">
         {!imgError ? (
