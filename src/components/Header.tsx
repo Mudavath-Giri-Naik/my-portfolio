@@ -18,9 +18,9 @@ export default function Header() {
   const title = pageTitles[pathname] || 'Portfolio';
 
   return (
-    <div className="fixed top-0 left-0 right-0 bg-white border-b border-gray-200 z-40 md:hidden">
+    <div className="fixed top-0 left-0 right-0 bg-black border-b border-gray-700 z-40 md:hidden">
       <div className="px-4 py-3 text-center">
-        <h1 className="text-lg font-semibold text-gray-900">{title}</h1>
+        <h1 className="text-lg font-semibold text-white">{title}</h1>
       </div>
     </div>
   );

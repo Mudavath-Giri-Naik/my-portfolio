@@ -38,14 +38,14 @@ const Navigation = () => {
     return (
       <>
         <Header />
-        <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-50">
+        <div className="fixed bottom-0 left-0 right-0 bg-black border-t border-gray-700 z-50">
           <div className="flex justify-around items-center h-16">
             {navItems.map((item) => (
               <Link
                 key={item.path}
                 href={item.path}
                 className={`flex flex-col items-center justify-center w-full h-full ${
-                  isActive(item.path) ? 'text-[#141414]' : 'text-[#141414]'
+                  isActive(item.path) ? 'text-blue-500' : 'text-white'
                 }`}
                 aria-label={item.name}
               >
@@ -59,15 +59,15 @@ const Navigation = () => {
   }
 
   return (
-    <nav className="flex flex-row justify-center items-center gap-8 w-full" style={{ background: 'transparent', border: 'none', boxShadow: 'none' }}>
+    <nav className="flex flex-row justify-center items-center gap-8 w-full bg-black my-0 py-0" style={{ border: 'none', boxShadow: 'none' }}>
       {navItems.map((item) => (
         <Link
           key={item.path}
           href={item.path}
           className={`text-base md:text-lg font-semibold tracking-wide px-2 pb-1 transition-colors duration-200 border-b-2 ${
             isActive(item.path)
-              ? 'border-black text-black'
-              : 'border-transparent text-white hover:text-gray-200 hover:border-gray-200'
+              ? 'border-blue-500 text-blue-500'
+              : 'border-transparent text-white hover:text-gray-400 hover:border-gray-400'
           }`}
         >
           {item.name}
