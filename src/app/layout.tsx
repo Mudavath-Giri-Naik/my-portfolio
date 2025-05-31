@@ -1,10 +1,9 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Pacifico } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 
 const inter = Inter({ subsets: ["latin"] });
-const pacifico = Pacifico({ weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Personal Portfolio",

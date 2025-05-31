@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import {
   FaLinkedin,
   FaInstagram,
@@ -78,7 +78,6 @@ export default function ProfileCard() {
 
   // Find the email link for the Hire Me button
   const emailSocial = SOCIALS.find((s) => s.name === 'Email');
-  const emailHref = emailSocial?.href || emailSocial?.default || 'mailto:example@example.com';
 
   return (
     <div className="flex flex-col md:flex-row items-center gap-8 w-full max-w-6xl p-10 md:p-16 bg-black text-white rounded-3xl overflow-hidden" style={{ position: 'relative', boxShadow: '0px -10px 40px 0px rgba(150, 100, 255, 0.8), 10px 0px 40px 0px rgba(150, 100, 255, 0.8), -10px 0px 40px 0px rgba(150, 100, 255, 0.8)' }}>
