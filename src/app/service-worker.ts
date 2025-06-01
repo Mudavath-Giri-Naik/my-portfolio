@@ -3,7 +3,7 @@ export function register() {
     window.addEventListener('load', () => {
       navigator.serviceWorker
         .register('/sw.js')
-        .then((registration) => {
+        .then(() => {
           console.log('ServiceWorker registration successful');
         })
         .catch((err) => {
@@ -25,7 +25,7 @@ export function unregister() {
   }
 }
 
-self.addEventListener('fetch', (event) => {
+self.addEventListener('fetch', () => {
   // Add fetch handling logic here if needed
   // event.respondWith(...);
 }); 
