@@ -1,8 +1,5 @@
 'use client';
 import ProfileCard from '@/components/ProfileCard';
-import {
-  SiJavascript, SiTypescript, SiPython, SiCplusplus, SiHtml5, SiCss3, SiReact, SiNextdotjs, SiNodedotjs, SiExpress, SiTailwindcss, SiBootstrap, SiMongodb, SiPostgresql, SiMysql, SiFirebase, SiAmazon, SiDocker, SiKubernetes, SiJest, SiRedux, SiTensorflow, SiPytorch, SiOpencv, SiC, SiDjango, SiFlask, SiSass, SiWebpack, SiGraphql, SiPrisma, SiJupyter, SiGo, SiRust, SiPhp, SiLaravel, SiRedis, SiRabbitmq, SiGnubash, SiSlack, SiTrello, SiNotion, SiPostman, SiSwagger, SiTestinglibrary, SiStorybook, SiCircleci, SiTravisci, SiGithubactions, SiStackoverflow, SiLeetcode, SiCodeforces, SiCodechef
-} from 'react-icons/si';
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 

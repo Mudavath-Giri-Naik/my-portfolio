@@ -23,4 +23,9 @@ export function unregister() {
         console.error(error.message);
       });
   }
-} 
+}
+
+self.addEventListener('fetch', (event) => {
+  // Add fetch handling logic here if needed
+  // event.respondWith(...);
+}); 
