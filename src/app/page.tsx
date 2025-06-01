@@ -39,7 +39,7 @@ export default function Home() {
       `}</style>
       <div className="flex flex-col items-center w-full min-h-[100vh] bg-black  text-white">
         {/* Animated Research/Work Sentences */}
-        <div className="w-full text-center mb-10 text-lg  font-medium text-white" style={{ minHeight: '2.5em' }}>
+        <div className="w-full text-center mb-10 text-lg  font-medium text-white" style={{ minHeight: '1.5em' }}>
           <motion.p
             key={currentSentenceIndex}
             initial={{ opacity: 0, y: 10 }}

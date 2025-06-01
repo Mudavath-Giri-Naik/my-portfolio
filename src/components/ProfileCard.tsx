@@ -78,6 +78,15 @@ export default function ProfileCard() {
 
   return (
     <div className="flex flex-col md:flex-row items-center gap-8 w-full max-w-6xl p-10 md:p-16 bg-black text-white rounded-3xl overflow-hidden" style={{ position: 'relative', boxShadow: '0px -10px 40px 0px rgba(150, 100, 255, 0.8), 10px 0px 40px 0px rgba(150, 100, 255, 0.8), -10px 0px 40px 0px rgba(150, 100, 255, 0.8)' }}>
+      {/* Animated "Open to Work" Badge */}
+      <motion.div
+        className="absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+      >
+        Open to work
+      </motion.div>
       {/* Profile Image Container - Fixed size, handles shadow, border, rounding, and overflow clipping */}
       <div className="flex-shrink-0 w-80 h-80 rounded-3xl overflow-hidden shadow-lg border-2 border-white/40">
         {!imgError ? (
@@ -115,7 +124,7 @@ export default function ProfileCard() {
           GIRI NAIK
         </h2>
         <p className="text-base md:text-lg text-gray-300 font-medium mb-2 max-w-xl">
-          Third-year Computer Science student passionate about building scalable, resource-efficient backend systems. Curious mind exploring the frontiers of AI and tech—currently diving into agentic AI. Problem-solver at heart, driven to build with impact.
+        <span className="font-bold text-white">Third-year CS student</span> with <span className="font-bold text-white">hands-on experience</span> in <span className="font-bold text-white">Python, AI/ML, and GCP</span>. I <span className="font-bold text-white">plan, build, and deploy</span> <span className="font-bold text-white">efficient end-to-end AI models</span> based on business needs. Strong focus on <span className="font-bold text-white">backend development</span>—<span className="font-bold text-white">APIs, databases, and performance optimization</span>. Also skilled in building <span className="font-bold text-white">full-stack web and mobile apps</span> using <span className="font-bold text-white">AI tools like ChatGPT and Cursor</span>. <span className="font-bold text-white">Cloud-ready</span>, <span className="font-bold text-white">product-focused</span>, and always <span className="font-bold text-white">building to solve real problems</span>.
         </p>
         <p className="text-gray-300 mb-6 max-w-md">
           Looking for opportunities to work on impactful projects.
