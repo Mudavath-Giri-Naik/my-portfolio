@@ -78,22 +78,26 @@ export default function ProfileCard() {
 
   return (
     <div className="flex flex-col md:flex-row items-center gap-8 w-full max-w-6xl p-10 md:p-16 bg-black text-white rounded-3xl overflow-hidden" style={{ position: 'relative', boxShadow: '0px -10px 40px 0px rgba(150, 100, 255, 0.8), 10px 0px 40px 0px rgba(150, 100, 255, 0.8), -10px 0px 40px 0px rgba(150, 100, 255, 0.8)' }}>
-      {/* Profile Image or Avatar */}
-      <div className="flex-shrink-0">
+      {/* Profile Image Container - Fixed size, handles shadow, border, rounding, and overflow clipping */}
+      <div className="flex-shrink-0 w-80 h-80 rounded-3xl overflow-hidden shadow-lg border-2 border-white/40">
         {!imgError ? (
-          <motion.div whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}>
+          <motion.div
+            className="w-full h-full" // Fill the container
+            whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
+          >
             <Image
               src={PROFILE_IMAGE}
               alt="Giri Naik profile"
-              width={400}
-              height={400}
-              className="rounded-3xl object-cover w-80 h-80 md:w-80 md:h-80 shadow-lg border-2 border-white/40"
+              width={400} // Intrinsic width of the source image
+              height={400} // Intrinsic height of the source image
+              className="object-cover w-full h-full" // Make image fill the motion.div
               onError={() => setImgError(true)}
               priority
             />
           </motion.div>
         ) : (
-          <div className="w-72 h-72 md:w-80 md:h-80 rounded-3xl bg-gray-700 flex items-center justify-center shadow-lg border-2 border-white/40">
+          // Fallback Avatar - Fills the same fixed-size container
+          <div className="w-full h-full bg-gray-700 flex items-center justify-center">
             <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="60" cy="60" r="60" fill="#4A5568" />
               <ellipse cx="60" cy="70" rx="35" ry="30" fill="#A0AEC0" />
@@ -104,6 +108,7 @@ export default function ProfileCard() {
           </div>
         )}
       </div>
+      
       {/* Profile Info */}
       <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left">
         <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-2 tracking-tight leading-tight">

@@ -8,11 +8,9 @@ import Header from './Header';
 const navItems = [
   { name: 'Home', path: '/', icon: '🏠' },
   { name: 'DSA', path: '/dsa', icon: '📊' },
-  { name: 'Development', path: '/development', icon: '💻' },
-  { name: 'AI & ML', path: '/ai', icon: '🚀' },
-  { name: 'Open Source', path: '/open-source', icon: '🌐' },
+  { name: 'Contributions', path: '/contributions', icon: '🌐' },
   { name: 'Projects', path: '/projects', icon: '🚀' },
-  { name: 'Experience', path: '/experience', icon: '📈' },
+  { name: 'Internships', path: '/experience', icon: '📈' },
   { name: 'Certifications', path: '/certifications', icon: '🏆' },
   { name: 'Blogs', path: '/blogs', icon: '👥' },
 ];
@@ -38,22 +36,6 @@ const Navigation = () => {
     return (
       <>
         <Header />
-        <div className="fixed bottom-0 left-0 right-0 bg-black border-t border-gray-700 z-50">
-          <div className="flex justify-around items-center h-16">
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                href={item.path}
-                className={`flex flex-col items-center justify-center w-full h-full ${
-                  isActive(item.path) ? 'text-blue-500' : 'text-white'
-                }`}
-                aria-label={item.name}
-              >
-                <span className="text-2xl">{item.icon}</span>
-              </Link>
-            ))}
-          </div>
-        </div>
       </>
     );
   }

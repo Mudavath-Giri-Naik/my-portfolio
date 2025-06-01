@@ -6,7 +6,7 @@ import Navigation from "@/components/Navigation";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Personal Portfolio",
+  title: "Giri Naik",
   description: "A personal portfolio website with PWA capabilities",
   manifest: "/manifest.json",
   appleWebApp: {
@@ -42,8 +42,9 @@ export default function RootLayout({
         <meta name="format-detection" content="telephone=no" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="theme-color" content="#2563eb" />
-        <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+        <link rel="apple-touch-icon" href="/profile.jpg" />
         <link rel="manifest" href="/manifest.json" />
+        <link rel="icon" href="/profile.jpg" />
       </head>
       <body className={inter.className + ' bg-black'}>
         <header className="w-full flex flex-col items-center pt-8 pb-2 bg-black">

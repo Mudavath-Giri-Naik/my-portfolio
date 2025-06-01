@@ -30,6 +30,12 @@ export default function Home() {
         body {
           background-color: #000 !important;
         }
+        @media (min-width: 768px) {
+          html,
+          body {
+            overflow: hidden;
+          }
+        }
       `}</style>
       <div className="flex flex-col items-center w-full min-h-[100vh] bg-black  text-white">
         {/* Animated Research/Work Sentences */}
