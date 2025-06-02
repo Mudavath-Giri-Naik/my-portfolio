@@ -6,6 +6,8 @@ import { useState, useEffect } from 'react';
 export default function Home() {
   const [currentSentenceIndex, setCurrentSentenceIndex] = useState(0);
 
+
+  
   const researchSentences = [
     "Exploring innovative solutions in scalable backend architecture.",
     "Deep diving into the latest advancements in machine learning models.",
