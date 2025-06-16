@@ -39,9 +39,9 @@ export default function Home() {
           }
         }
       `}</style>
-      <div className="flex flex-col items-center w-full min-h-[100vh] bg-black  text-white">
+      <div className="flex flex-col items-center w-full min-h-screen bg-black text-white justify-start">
         {/* Animated Research/Work Sentences */}
-        <div className="w-full text-center mb-10 text-lg  font-medium text-white" style={{ minHeight: '1.5em' }}>
+        <div className="w-full text-center mb-10 text-lg font-medium text-white mt-4 md:mt-0" style={{ minHeight: '1.5em' }}>
           <motion.p
             key={currentSentenceIndex}
             initial={{ opacity: 0, y: 10 }}
@@ -52,7 +52,9 @@ export default function Home() {
             {researchSentences[currentSentenceIndex]}
           </motion.p>
         </div>
-        <ProfileCard />
+        <div className="mt-4 mb-2">
+          <ProfileCard />
+        </div>
         <motion.div
           initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}

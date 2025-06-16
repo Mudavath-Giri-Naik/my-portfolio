@@ -116,7 +116,7 @@ export default function ProfileCard() {
 
   return (
     <motion.div
-      className="flex flex-col md:flex-row items-center gap-6 md:gap-8 w-full max-w-md md:max-w-6xl p-6 sm:p-8 md:p-16 bg-black text-white rounded-3xl overflow-hidden"
+      className="flex flex-col md:flex-row items-center gap-6 md:gap-8 max-w-[95vw] md:w-full max-w-md md:max-w-6xl p-6 sm:p-8 md:p-16 bg-black text-white rounded-3xl overflow-hidden mx-3 sm:mx-0"
       style={{ 
         position: 'relative', 
         boxShadow: '0px -10px 40px 0px rgba(150, 100, 255, 0.8), 10px 0px 40px 0px rgba(150, 100, 255, 0.8), -10px 0px 40px 0px rgba(150, 100, 255, 0.8)' 
@@ -137,38 +137,35 @@ export default function ProfileCard() {
 
       {/* Profile Image Container */}
       <motion.div
-        className="relative flex-shrink-0 w-36 h-36 sm:w-40 sm:h-40 md:w-80 md:h-80 rounded-full md:rounded-3xl overflow-hidden 
-                   border-2 md:border-white/40 
-                   md:shadow-lg 
-                   animate-purple-border-pulse" // Custom animation class
+        className="relative flex-shrink-0 w-36 h-36 sm:w-40 sm:h-40 md:w-80 md:h-80 overflow-hidden shadow-lg bg-gray-900 rounded-lg"
         variants={imageVariants}
       >
         {/* Inner div for hover effect, separate from border animation div */}
-         <motion.div
-            className="w-full h-full rounded-full md:rounded-3xl overflow-hidden" // Ensure inner image also clips correctly
-            whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
-          >
-            {!imgError ? (
-                <Image
-                  src={PROFILE_IMAGE}
-                  alt="Giri Naik profile"
-                  width={400}
-                  height={400}
-                  className="object-cover w-full h-full"
-                  onError={() => setImgError(true)}
-                  priority
-                />
-            ) : (
-              <div className="w-full h-full bg-gray-700 flex items-center justify-center">
-                <svg width="80" height="80" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="md:w-2/3 md:h-2/3">
-                  <circle cx="60" cy="60" r="60" fill="#4A5568" />
-                  <ellipse cx="60" cy="70" rx="35" ry="30" fill="#A0AEC0" />
-                  <circle cx="60" cy="54" r="24" fill="#E2E8F0" />
-                  <ellipse cx="60" cy="54" rx="12" ry="10" fill="#718096" />
-                  <ellipse cx="60" cy="90" rx="22" ry="12" fill="#CBD5E0" />
-                </svg>
-              </div>
-            )}
+        <motion.div
+          className="w-full h-full overflow-hidden" // No rounding, square shape
+          whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
+        >
+          {!imgError ? (
+            <Image
+              src={PROFILE_IMAGE}
+              alt="Giri Naik profile"
+              width={400}
+              height={400}
+              className="object-cover w-full h-full" // No rounded classes
+              onError={() => setImgError(true)}
+              priority
+            />
+          ) : (
+            <div className="w-full h-full bg-gray-700 flex items-center justify-center rounded-lg">
+              <svg width="80" height="80" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="md:w-2/3 md:h-2/3">
+                <rect x="10" y="10" width="100" height="100" rx="16" fill="#4A5568" />
+                <ellipse cx="60" cy="70" rx="35" ry="30" fill="#A0AEC0" />
+                <rect x="36" y="30" width="48" height="48" rx="12" fill="#E2E8F0" />
+                <ellipse cx="60" cy="54" rx="12" ry="10" fill="#718096" />
+                <ellipse cx="60" cy="90" rx="22" ry="12" fill="#CBD5E0" />
+              </svg>
+            </div>
+          )}
         </motion.div>
       </motion.div>
       

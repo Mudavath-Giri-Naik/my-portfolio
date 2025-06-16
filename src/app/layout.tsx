@@ -8,15 +8,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Giri Naik",
   description: "A personal portfolio website with PWA capabilities",
-  manifest: "/manifest.json",
-  appleWebApp: {
-    capable: true,
-    statusBarStyle: "default",
-    title: "Personal Portfolio",
-  },
   icons: {
-    icon: "/icons/icon-192x192.png",
-    apple: "/icons/icon-192x192.png",
+    icon: "/profile.jpg",
+    apple: "/profile.jpg",
   },
 };
 
@@ -36,15 +30,9 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="application-name" content="Personal Portfolio" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="Personal Portfolio" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="theme-color" content="#2563eb" />
-        <link rel="apple-touch-icon" href="/profile.jpg" />
-        <link rel="manifest" href="/manifest.json" />
-        <link rel="icon" href="/profile.jpg" />
       </head>
       <body className={inter.className + ' bg-black'}>
         <header className="w-full flex flex-col items-center pt-8 pb-2 bg-black">
