@@ -188,7 +188,7 @@
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
-      padding: 1.2em 1em 2em 1em;
+      padding: 0.5em 1em 1.2em 1em; /* reduced top and bottom padding */
       overflow-y: visible;
     }
     
@@ -203,30 +203,30 @@
     .profileImage {
       width: 240px;
       height: 240px;
-      margin: 0.3em auto 0.5em auto;
+      margin: 0.1em auto 0.3em auto; /* reduced top margin */
       border-radius: 12px;
     }
     
     .profileHeaderTextBelow {
       text-align: center;
-      margin-bottom: 0.7em;
+      margin-bottom: 0.5em; /* reduced */
     }
     .profileHeaderTextBelow h1 {
       font-size: 2.7em;
       font-weight: 800;
-      margin: 0.15em 0 0.1em 0;
+      margin: 0.1em 0 0.1em 0; /* reduced top margin */
       letter-spacing: -1px;
     }
     .profileHeaderTextBelow p {
       font-size: 1.5em;
       color: #57606a;
-      margin: 0.1em 0 0 0;
+      margin: 0.05em 0 0 0; /* reduced */
       font-weight: 600;
     }
     .detailsList {
       font-size: 1.1em;
-      padding: 1.2em 0 0.5em 0;
-      margin: 0.5em 0 0 0;
+      padding: 0.7em 0 0.3em 0; /* reduced top and bottom padding */
+      margin: 0.2em 0 0 0; /* reduced top margin */
     }
     .detailsList li {
       font-size: 1.15em;
@@ -236,7 +236,7 @@
       font-size: 1.4em;
     }
     .socialLinks {
-      margin-top: 1.5em;
+      margin-top: 1em; /* reduced */
       font-size: 1.2em;
     }
     .socialIcon {
@@ -244,7 +244,7 @@
     }
     .contentArea {
       margin-top: 0;
-      padding: 2em 1em;
+      padding: 1em 0.5em 0 0.5em; /* reduced top padding */
     }
   }
 
