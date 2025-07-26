@@ -23,6 +23,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/myfavicon.png" type="image/png" />
+      </head>
       <body className={inter.className}>
         <div className={styles.mainLayout}>
           {/* --- Left Sidebar (Profile Card) - Static --- */}

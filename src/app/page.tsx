@@ -7,12 +7,20 @@ import styles from "./Home.module.css";
 // This component can be expanded with more content
 const AboutMeContent = () => (
   <article>
-    <h2>About Me</h2>
+    <h1>Hello World!</h1>
     <p>
-      Pre-final year Computer Science student with hands-on experience in Python, AI/ML, and Google Cloud Platform (GCP).
+      I'm <strong>Giri</strong>, a <strong>20-year-old Computer Science student</strong> who finds joy in <strong>decoding complexity</strong>.
     </p>
     <p>
-      My focus lies in backend development, including building robust APIs, managing databases, and optimizing for performance. I am also proficient in developing full-stack web and mobile applications, often leveraging AI-powered tools. I am passionate about creating cloud-ready, product-focused solutions that solve real-world problems.
+      I believe <strong>true mastery</strong> begins when <strong>thinking becomes instinct</strong>.<br/>
+      I want to reach a point where <strong>writing Java or Python code</strong>, <strong>solving complex DSA problems</strong>, or <strong>designing optimal solutions</strong> doesn’t require conscious effort — it just <strong>flows</strong>.
+    </p>
+    <p>
+      Like <strong>touch typing</strong> or <strong>riding a bike</strong>, instinct comes from <strong>relentless practice</strong> — exploring every angle, failing, fixing, and refining — until the <strong>right solution becomes second nature</strong>.
+    </p>
+    <p>
+      That’s the level I chase:<br/>
+      Not just <strong>knowing the logic</strong>, but <strong>living it</strong>.
     </p>
   </article>
 );
