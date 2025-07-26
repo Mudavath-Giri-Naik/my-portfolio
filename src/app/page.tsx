@@ -1,70 +1,27 @@
-'use client';
-import ProfileCard from '@/components/ProfileCard';
-import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import styles from "./Home.module.css";
+
+// This component can be expanded with more content
+const AboutMeContent = () => (
+  <article>
+    <h2>About Me</h2>
+    <p>
+      Pre-final year Computer Science student with hands-on experience in Python, AI/ML, and Google Cloud Platform (GCP).
+    </p>
+    <p>
+      My focus lies in backend development, including building robust APIs, managing databases, and optimizing for performance. I am also proficient in developing full-stack web and mobile applications, often leveraging AI-powered tools. I am passionate about creating cloud-ready, product-focused solutions that solve real-world problems.
+    </p>
+  </article>
+);
+
 
 export default function Home() {
-  const [currentSentenceIndex, setCurrentSentenceIndex] = useState(0);
-
-
-  
-  const researchSentences = [
-    "Exploring innovative solutions in scalable backend architecture.",
-    "Deep diving into the latest advancements in machine learning models.",
-    "Building robust and efficient data processing pipelines.",
-    "Developing intuitive user interfaces with modern frontend frameworks.",
-    "Contributing to open-source projects in cloud computing."
-  ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSentenceIndex((prevIndex) => (prevIndex + 1) % researchSentences.length);
-    }, 3000);
-
-    // Clear interval on component unmount
-    return () => clearInterval(interval);
-  }, [researchSentences.length]);
-
   return (
-    <>
-      <style jsx global>{`
-        html,
-        body {
-          background-color: #000 !important;
-        }
-        @media (min-width: 768px) {
-          html,
-          body {
-            overflow: hidden;
-          }
-        }
-      `}</style>
-      <div className="flex flex-col items-center w-full min-h-screen bg-black text-white justify-start">
-        {/* Animated Research/Work Sentences */}
-        <div className="w-full text-center mb-10 text-lg font-medium text-white mt-4 md:mt-0" style={{ minHeight: '1.5em' }}>
-          <motion.p
-            key={currentSentenceIndex}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.5 }}
-          >
-            {researchSentences[currentSentenceIndex]}
-          </motion.p>
-        </div>
-        <div className="mt-4 mb-2">
-          <ProfileCard />
-        </div>
-        <motion.div
-          initial={{ opacity: 0, y: 60 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: 'easeOut', delay: 0.3 }}
-          className="w-full flex items-center justify-center bg-transparent mt-0"
-          style={{ minHeight: '18vh' }}
-        >
-          
-        </motion.div>
-      </div>
-    </>
+    <div>
+      <AboutMeContent />
+    </div>
   );
 }

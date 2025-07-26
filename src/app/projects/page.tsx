@@ -1,17 +1,23 @@
-'use client';
-import { motion } from 'framer-motion';
+import Link from 'next/link';
 
-export default function Page() {
+export default function Projects() {
   return (
-    <div className="w-full min-h-screen flex items-center justify-center bg-black">
-      <motion.h1
-        className="text-4xl md:text-6xl font-extrabold text-white"
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, ease: 'easeOut', repeat: Infinity, repeatType: 'reverse' }}
-      >
-        Added soon......
-      </motion.h1>
-    </div>
+    <article>
+      {/* Removed Back to Home link for consistent navigation */}
+      
+      <div style={{ 
+        padding: '2em', 
+        background: '#f8f9fa', 
+        border: '1px solid #a2a9b1', 
+        borderRadius: '4px',
+        textAlign: 'center',
+        marginTop: '2em'
+      }}>
+        <h2 style={{ color: '#54595d', marginBottom: '1em' }}>Details Added Soon</h2>
+        <p style={{ color: '#54595d', fontSize: '1.1em' }}>
+          Project details and descriptions will be added here soon.
+        </p>
+      </div>
+    </article>
   );
 } 

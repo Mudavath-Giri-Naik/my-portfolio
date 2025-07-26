@@ -1,9 +1,22 @@
-import React from 'react';
+import Link from 'next/link';
 
-export default function Page() {
+export default function Certifications() {
   return (
-    <div style={{ textAlign: 'center', marginTop: '50px' }}>
-      <h1>Details added soon...</h1>
-    </div>
+    <article>
+      
+      <div style={{ 
+        padding: '2em', 
+        background: '#f8f9fa', 
+        border: '1px solid #a2a9b1', 
+        borderRadius: '4px',
+        textAlign: 'center',
+        marginTop: '2em'
+      }}>
+        <h2 style={{ color: '#54595d', marginBottom: '1em' }}>Details Added Soon</h2>
+        <p style={{ color: '#54595d', fontSize: '1.1em' }}>
+          Professional certifications and achievements will be added here soon.
+        </p>
+      </div>
+    </article>
   );
 } 
