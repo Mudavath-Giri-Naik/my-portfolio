@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Image from "next/image";
-import { FaLinkedin, FaGithub, FaBirthdayCake, FaMapMarkerAlt, FaGraduationCap, FaUniversity } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaBirthdayCake, FaMapMarkerAlt, FaGraduationCap, FaUniversity, FaUser } from "react-icons/fa";
 import { SiLeetcode, SiCodechef } from "react-icons/si";
 import { FaEnvelope, FaPhone } from "react-icons/fa6";
 import AgeCalculator from "./components/AgeCalculator";
@@ -21,10 +21,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Generate a simple SVG data URL for the person icon
+  const personFavicon =
+    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='black'%3E%3Ccircle cx='16' cy='12' r='7'/%3E%3Cellipse cx='16' cy='24' rx='12' ry='7'/%3E%3C/svg%3E";
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/myfavicon.png" type="image/png" />
+        <link rel="icon" href={personFavicon} type="image/svg+xml" />
       </head>
       <body className={inter.className}>
         <div className={styles.mainLayout}>
