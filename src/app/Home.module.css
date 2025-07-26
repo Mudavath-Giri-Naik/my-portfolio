@@ -244,7 +244,10 @@
     }
     .contentArea {
       margin-top: 0;
-      padding: 1em 0.5em 0 0.5em; /* reduced top padding */
+      padding: 1.5em 0.5em 0 0.5em; /* increased top padding for nav visibility */
+    }
+    .contentNav {
+      padding-top: 1.5em;
     }
   }
 
