@@ -64,31 +64,33 @@ const AboutMeContent = () => (
     <style jsx>{`
       .skills-table-container {
         margin-top: 2em;
-        overflow-x: auto;
+        overflow-x: auto; /* Ensures table is scrollable on very small screens if needed */
       }
 
       .skills-table {
         width: 100%;
         border-collapse: collapse;
-        background: #fff;
+        background: #ffffff;
         font-size: 1em;
-        box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-        border: 1px solid #e0e0e0;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        border: 1px solid #e9ecef; /* Lighter grey border */
         word-break: break-word;
       }
 
       .skills-table th, .skills-table td {
         padding: 0.8em 1.2em;
         text-align: left;
+        border-bottom: 1px solid #e9ecef;
       }
 
       .skills-table thead tr {
-        background: #f8f9fa;
+        background: #f8f9fa; /* Very light grey */
       }
 
       .skills-table th {
         font-weight: 700;
-        border-bottom: 2px solid #e0e0e0;
+        color: #343a40; /* Dark grey for text */
+        border-bottom: 2px solid #dee2e6; /* Slightly darker border for header */
       }
       
       .skills-table th:first-child {
@@ -99,8 +101,8 @@ const AboutMeContent = () => (
         background: #f8f9fa;
       }
       
-      .skills-table td {
-          border-bottom: 1px solid #e0e0e0;
+      .skills-table tbody tr:hover {
+        background: #e9ecef; /* Hover effect for desktop */
       }
 
       .skills-table tbody tr:last-child td {
@@ -109,6 +111,11 @@ const AboutMeContent = () => (
 
       /* --- Responsive Mobile View --- */
       @media (max-width: 768px) {
+        .skills-table-container {
+          /* Add horizontal padding to create space on left and right */
+          padding: 0 1rem;
+        }
+
         .skills-table thead {
           /* Hide the default table header on mobile */
           display: none;
@@ -124,28 +131,36 @@ const AboutMeContent = () => (
           /* Each row becomes a card */
           margin-bottom: 1.5rem;
           border: 1px solid #dee2e6;
-          border-radius: 8px;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-          overflow: hidden; /* Important for border-radius */
+          border-radius: 8px; /* Softer rounded corners */
+          box-shadow: 0 4px 8px rgba(0,0,0,0.07); /* Subtle shadow for depth */
+          overflow: hidden; /* Important for border-radius to apply correctly */
         }
         
         .skills-table td {
           border: none;
-          padding: 1rem 1.2rem;
+          padding: 1.2rem 1.4rem; /* Increased padding for more space */
+          line-height: 1.6; /* Better readability */
         }
 
         .skills-table td:first-child {
           /* This is our new card header */
-          background-color: #e7f5ff; /* Light blue background */
+          background-color: #f1f3f5; /* A clean, light grey */
           font-weight: 700;
           font-size: 1.1em;
-          color: #1c5d99; /* A darker blue for text */
-          border-bottom: 1px solid #cce7ff;
+          color: #212529; /* Almost black for high contrast */
+          border-bottom: 1px solid #dee2e6; /* Separator line */
         }
         
         .skills-table td:last-child {
             /* This is the card body */
-            background-color: #fff;
+            background-color: #ffffff;
+            color: #495057; /* Softer black for body text */
+        }
+
+        /* Reset box-shadow and margin for the container on mobile */
+        .skills-table {
+          box-shadow: none;
+          border: none;
         }
       }
     `}</style>

@@ -12,6 +12,7 @@ export default function ContentNavigation() {
     { href: '/projects', label: 'Projects' },
     { href: '/dsa', label: 'DSA' },
     { href: '/contributions', label: 'Contributions' },
+    { href: '/certifications', label: 'Certifications' }, // 👈 Added this line
     { href: '/blogs', label: 'Blogs' },
   ];
 
@@ -28,4 +29,4 @@ export default function ContentNavigation() {
       ))}
     </nav>
   );
-} 
+}
