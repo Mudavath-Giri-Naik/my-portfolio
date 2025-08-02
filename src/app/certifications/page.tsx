@@ -1,4 +1,5 @@
 'use client';
+import Head from 'next/head';
 import Link from 'next/link';
 
 type Certification = {
@@ -45,9 +46,6 @@ const certifications: Certification[] = [
     skills: ['Full Stack Architecture', 'System Design', 'Frontend', 'Backend', 'Database Integration', 'Deployment'],
     link: 'https://courses.edx.org/certificates/ec71da81973d4b87b4e39ba266ae2159?_gl=1*1ar2i8t*_gcl_au*NTIyMDYzMzc2LjE3NTQxMDAxNTc.*_ga*MTE4MzU0MDUzLjE3NTQxMDAxNTc.*_ga_D3KS4KMDT0*czE3NTQxMDI1NTgkbzIkZzEkdDE3NTQxMDI2MzEkajYwJGwwJGgw',
   },
-
-
-
   {
     title: 'Back-end Application Development with Node.js and Express',
     platform: 'EdX',
@@ -56,7 +54,6 @@ const certifications: Certification[] = [
     skills: ['Node.js', 'Express.js', 'RESTful APIs', 'Middleware', 'Asynchronous JavaScript', 'NPM'],
     link: 'https://courses.edx.org/certificates/824b7886d36c4711ba07ec92f1a41ccb?_gl=1*1a0suhq*_gcl_au*NTIyMDYzMzc2LjE3NTQxMDAxNTc.*_ga*MTE4MzU0MDUzLjE3NTQxMDAxNTc.*_ga_D3KS4KMDT0*czE3NTQxMDI1NTgkbzIkZzEkdDE3NTQxMDI2MzEkajYwJGwwJGgw',
   },
-
   {
     title: 'Introduction to Cloud Native, DevOps, Agile, and NoSQL',
     platform: 'EdX',
@@ -110,150 +107,170 @@ const certifications: Certification[] = [
 
 export default function Certifications() {
   return (
-    <section style={{ padding: '4em 1em', backgroundColor: '#f0f2f5' }}>
+    <>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
+      <section className="certifications-section">
+        <div className="certifications-grid">
+          {certifications.map((cert) => (
+            <div
+              key={cert.title}
+              className="certification-card"
+            >
+              <div className="card-content">
+                <div className="card-header">
+                  <h3 className="card-title">
+                    {cert.title}
+                  </h3>
+                  <div className="card-issuer">
+                    <div style={{ fontWeight: 'bold' }}>{cert.issuedBy}</div>
+                    <div>{cert.issuedDate}</div>
+                  </div>
+                </div>
 
+                <p className="card-platform">
+                  {cert.platform}
+                </p>
 
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
-          gap: '2.5rem',
-          maxWidth: '1200px',
-          margin: '0 auto',
-        }}
-      >
-        {certifications.map((cert) => (
-          <div
-            key={cert.title}
-            style={{
-              background: '#ffffff',
-              border: '1px solid #e2e8f0',
-              borderRadius: '12px',
-              boxShadow: '0 10px 20px rgba(0, 0, 0, 0.05)',
-              display: 'flex',
-              flexDirection: 'column',
-              transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'translateY(-5px)';
-              e.currentTarget.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.1)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.05)';
-            }}
-          >
-            <div style={{ padding: '2rem', flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
-              {/* Header */}
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'flex-start',
-                  marginBottom: '0.5rem',
-                }}
-              >
-                <h3
-                  style={{
-                    fontSize: 'clamp(1.2rem, 3vw, 1.4rem)',
-                    fontWeight: '600',
-                    color: '#2d3748',
-                    fontFamily: 'Georgia, serif',
-                    lineHeight: '1.3',
-                    paddingRight: '1rem',
-                  }}
-                >
-                  {cert.title}
-                </h3>
-                <div
-                  style={{
-                    textAlign: 'right',
-                    fontSize: '0.8rem',
-                    color: '#4a5568',
-                    minWidth: '90px',
-                    fontWeight: 500,
-                  }}
-                >
-                  <div style={{ fontWeight: 'bold' }}>{cert.issuedBy}</div>
-                  <div>{cert.issuedDate}</div>
+                <div className="card-skills">
+                  {cert.skills.map((skill) => (
+                    <span key={skill} className="skill-tag">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+
+                <div style={{ flexGrow: 1 }}></div>
+
+                <div className="card-button-container">
+                  <Link
+                    href={cert.link}
+                    className="card-button"
+                  >
+                    View Certificate
+                  </Link>
                 </div>
               </div>
-
-              {/* Platform */}
-              <p
-                style={{
-                  fontSize: '0.95rem',
-                  fontStyle: 'italic',
-                  color: '#718096',
-                  marginBottom: '1.5rem',
-                  textAlign: 'left',
-                }}
-              >
-                {cert.platform}
-              </p>
-
-              {/* Skills */}
-              <div
-                style={{
-                  display: 'flex',
-                  flexWrap: 'wrap',
-                  gap: '0.5rem',
-                  marginBottom: '2rem',
-                }}
-              >
-                {cert.skills.map((skill) => (
-                  <span
-                    key={skill}
-                    style={{
-                      fontSize: '0.75rem',
-                      background: '#edf2f7',
-                      padding: '0.4rem 0.8rem',
-                      borderRadius: '15px',
-                      border: '1px solid #e2e8f0',
-                      color: '#4a5568',
-                      fontWeight: 500,
-                    }}
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-
-              {/* Spacer to push button to the bottom */}
-              <div style={{ flexGrow: 1 }}></div>
-
-              {/* Button */}
-              <div style={{ textAlign: 'center', marginTop: 'auto', paddingTop: '1rem' }}>
-                <Link
-                  href={cert.link}
-                  style={{
-                    display: 'inline-block',
-                    backgroundColor: '#2b6cb0',
-                    color: '#ffffff',
-                    padding: '0.7rem 1.8rem',
-                    borderRadius: '8px',
-                    fontSize: '0.9rem',
-                    fontWeight: 600,
-                    textDecoration: 'none',
-                    transition: 'background-color 0.3s ease, transform 0.2s ease',
-                    borderBottom: '3px solid #1a365d',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = '#2c5282';
-                    e.currentTarget.style.transform = 'translateY(-2px)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = '#2b6cb0';
-                    e.currentTarget.style.transform = 'translateY(0)';
-                  }}
-                >
-                  View Certificate
-                </Link>
-              </div>
             </div>
-          </div>
-        ))}
-      </div>
-    </section>
+          ))}
+        </div>
+      </section>
+      <style jsx global>{`
+        .certifications-section {
+          padding: 4em 1em;
+          background-color: #f0f2f5;
+        }
+
+        .certifications-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+          gap: 2.5rem;
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+
+        .certification-card {
+          background: #ffffff;
+          border: 1px solid #e2e8f0;
+          border-radius: 12px;
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+          display: flex;
+          flex-direction: column;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .certification-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-content {
+          padding: 2rem;
+          flex-grow: 1;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .card-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          margin-bottom: 0.5rem;
+        }
+
+        .card-title {
+          font-size: clamp(1.2rem, 3vw, 1.4rem);
+          font-weight: 600;
+          color: #2d3748;
+          font-family: 'Georgia', serif;
+          line-height: 1.3;
+          padding-right: 1rem;
+        }
+
+        .card-issuer {
+          text-align: right;
+          font-size: 0.8rem;
+          color: #4a5568;
+          min-width: 90px;
+          font-weight: 500;
+        }
+
+        .card-platform {
+          font-size: 0.95rem;
+          font-style: italic;
+          color: #718096;
+          margin-bottom: 1.5rem;
+          text-align: left;
+        }
+
+        .card-skills {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.5rem;
+          margin-bottom: 2rem;
+        }
+
+        .skill-tag {
+          font-size: 0.75rem;
+          background: #edf2f7;
+          padding: 0.4rem 0.8rem;
+          border-radius: 15px;
+          border: 1px solid #e2e8f0;
+          color: #4a5568;
+          font-weight: 500;
+        }
+
+        .card-button-container {
+          text-align: center;
+          margin-top: auto;
+          padding-top: 1rem;
+        }
+
+        .card-button {
+          display: inline-block;
+          background-color: #2b6cb0;
+          color: #ffffff;
+          padding: 0.7rem 1.8rem;
+          border-radius: 8px;
+          font-size: 0.9rem;
+          font-weight: 600;
+          text-decoration: none;
+          transition: background-color 0.3s ease, transform 0.2s ease;
+          border-bottom: 3px solid #1a365d;
+        }
+
+        .card-button:hover {
+          background-color: #2c5282;
+          transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+          .certifications-grid {
+            grid-template-columns: 1fr;
+          }
+        }
+      `}</style>
+    </>
   );
 }
