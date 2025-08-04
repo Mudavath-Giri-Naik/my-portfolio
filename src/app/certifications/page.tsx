@@ -154,7 +154,7 @@ export default function Certifications() {
               </div>
             </div>
           ))}
-        </div>
+      </div>
       </section>
       <style jsx global>{`
         .certifications-section {
@@ -273,4 +273,4 @@ export default function Certifications() {
       `}</style>
     </>
   );
-}
+} 

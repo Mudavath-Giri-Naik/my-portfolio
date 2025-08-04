@@ -123,6 +123,10 @@
     min-width: 0;
     padding-top: 0.5em;
   }
+
+  .contentWrapper {
+    padding-top: 1em;
+  }
   
   .contentNav {
     display: flex;
@@ -160,6 +164,143 @@
     font-weight: 600;
     box-shadow: 0 2px 8px rgba(9,105,218,0.08);
   }
+
+  /* --- Mobile Menu Styles --- */
+  .mobileMenuWrapper {
+    display: none; /* Hidden by default on desktop */
+  }
+
+  .mobileMenuContainer {
+    position: relative;
+    z-index: 1000;
+  }
+
+  .menuButton {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1001;
+    background: #ffffff;
+    border: 1px solid #d0d7de;
+    border-radius: 8px;
+    padding: 0.75rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    pointer-events: auto;
+  }
+
+  .menuButton.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.8);
+  }
+
+  .menuButton:hover {
+    background: #f6f8fa;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transform: translateY(-1px);
+  }
+
+  .mobileMenuOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .mobileMenuOverlay.open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .mobileMenuContent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100%;
+    background-color: #ffffff;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+  }
+
+  .mobileMenuOverlay.open .mobileMenuContent {
+    transform: translateX(0);
+  }
+
+  .mobileMenuHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    border-bottom: 1px solid #e1e4e8;
+    background-color: #f6f8fa;
+  }
+
+  .mobileMenuHeader h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #24292e;
+  }
+
+  .closeButton {
+    background: none;
+    border: none;
+    color: #586069;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .closeButton:hover {
+    color: #24292e;
+    background-color: #e1e4e8;
+  }
+
+  .mobileNav {
+    padding: 1rem 0;
+  }
+
+  .mobileNavLink {
+    display: block;
+    padding: 1rem 1.5rem;
+    color: #24292e;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    border-bottom: 1px solid #f1f3f4;
+    transition: all 0.2s ease;
+  }
+
+  .mobileNavLink:hover {
+    background-color: #f6f8fa;
+    color: #0969da;
+  }
+
+  .mobileActiveLink {
+    background-color: #e6f0fa;
+    color: #0969da;
+    border-left: 3px solid #0969da;
+  }
   
   /* --- Responsive Adjustments --- */
   @media (max-width: 800px) {
@@ -180,7 +321,7 @@
     
     .profileCard {
       position: relative;
-      min-height: 100vh;
+      min-height: auto;
       border-radius: 0;
       border: none;
       box-shadow: none;
@@ -188,7 +329,7 @@
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
-      padding: 0.5em 1em 1.2em 1em; /* reduced top and bottom padding */
+      padding: 0.5em 1em 1em 1em;
       overflow-y: visible;
     }
     
@@ -203,30 +344,30 @@
     .profileImage {
       width: 240px;
       height: 240px;
-      margin: 0.1em auto 0.3em auto; /* reduced top margin */
+      margin: 0.1em auto 0.3em auto;
       border-radius: 12px;
     }
     
     .profileHeaderTextBelow {
       text-align: center;
-      margin-bottom: 0.5em; /* reduced */
+      margin-bottom: 0.5em;
     }
     .profileHeaderTextBelow h1 {
       font-size: 2.7em;
       font-weight: 800;
-      margin: 0.1em 0 0.1em 0; /* reduced top margin */
+      margin: 0.1em 0 0.1em 0;
       letter-spacing: -1px;
     }
     .profileHeaderTextBelow p {
       font-size: 1.5em;
       color: #57606a;
-      margin: 0.05em 0 0 0; /* reduced */
+      margin: 0.05em 0 0 0;
       font-weight: 600;
     }
     .detailsList {
       font-size: 1.1em;
-      padding: 0.7em 0 0.3em 0; /* reduced top and bottom padding */
-      margin: 0.2em 0 0 0; /* reduced top margin */
+      padding: 0.7em 0 0.3em 0;
+      margin: 0.2em 0 0 0;
     }
     .detailsList li {
       font-size: 1.15em;
@@ -236,7 +377,7 @@
       font-size: 1.4em;
     }
     .socialLinks {
-      margin-top: 1em; /* reduced */
+      margin-top: 0.5em;
       font-size: 1.2em;
     }
     .socialIcon {
@@ -244,10 +385,43 @@
     }
     .contentArea {
       margin-top: 0;
-      padding: 1.5em 0.5em 0 0.5em; /* increased top padding for nav visibility */
+      padding: 0.5em 0.5em 0 0.5em;
     }
-    .contentNav {
+
+    .contentWrapper {
       padding-top: 1.5em;
+    }
+    
+    /* Hide desktop navigation on mobile */
+    .contentNav {
+      display: none;
+    }
+    
+    /* Show mobile menu on mobile */
+    .mobileMenuWrapper {
+      display: block;
+    }
+
+    /* Show profile information on About Me page (home page) */
+    .sidebar.show-profile {
+      display: block;
+    }
+
+    /* Hide profile information only on other pages (not About Me) */
+    .sidebar:not(.show-profile) {
+      display: none;
+    }
+
+    /* Show only content area when profile is hidden */
+    .contentArea.full-width {
+      width: 100%;
+      max-width: 100%;
+      padding: 1em;
+    }
+
+    /* Add top spacing for content when profile is shown */
+    .contentArea:not(.full-width) .contentWrapper {
+      padding-top: 2em;
     }
   }
 
@@ -272,5 +446,10 @@
     background: #e6f0fa;
     color: #0969da;
     box-shadow: none;
+  }
+  
+  /* Hide mobile menu on desktop */
+  .mobileMenuWrapper {
+    display: none;
   }
 }
