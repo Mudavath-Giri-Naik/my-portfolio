@@ -28,7 +28,6 @@ export default function MobileMenu() {
 
   const handleNavClick = (href: string) => {
     closeMenu();
-    // If navigating to home page, scroll to top
     if (href === '/') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
@@ -36,18 +35,14 @@ export default function MobileMenu() {
 
   return (
     <div className={styles.mobileMenuContainer}>
-      {/* Simple Menu Icon */}
+      {/* Simple Unicode Menu Icon (☰) */}
       <button 
         className={`${styles.menuButton} ${isOpen ? styles.hidden : ''}`}
         onClick={toggleMenu}
-        aria-label="Toggle mobile menu"
+        aria-label="Open mobile menu"
         type="button"
       >
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <line x1="3" y1="12" x2="21" y2="12"></line>
-          <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
+        <span style={{ fontSize: '1.8rem', fontWeight: '500' }}>☰</span>
       </button>
 
       {/* Mobile Menu Overlay */}
@@ -55,16 +50,14 @@ export default function MobileMenu() {
         <div className={styles.mobileMenuContent} onClick={(e) => e.stopPropagation()}>
           <div className={styles.mobileMenuHeader}>
             <h3>Menu</h3>
+            {/* Simple Close Icon (×) */}
             <button 
               className={styles.closeButton}
               onClick={closeMenu}
               aria-label="Close mobile menu"
               type="button"
             >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-              </svg>
+              <span style={{ fontSize: '1.8rem', fontWeight: '500' }}>×</span>
             </button>
           </div>
           
@@ -84,4 +77,4 @@ export default function MobileMenu() {
       </div>
     </div>
   );
-} 
+}

@@ -4,15 +4,21 @@ import Link from 'next/link';
 
 export default function Projects() {
   return (
-    <article>
-      <h1>Projects</h1>
-      
-      <div style={{ 
-        display: 'grid', 
-        gap: '0.8em', 
-        marginTop: '0.8em' 
+    <article
+      style={{
+        marginTop: '1.5rem',
+        paddingTop: '1rem',
+      }}
+    >
+      {/* Spacer to avoid overlap with mobile menu (only visible on mobile) */}
+      <div className="mobile-menu-spacer" />
+
+      <div style={{
+        display: 'grid',
+        gap: '0.8em',
+        marginTop: '0.8em'
       }}>
-        
+
         {/* AI Assistant Project */}
         <div style={{
           border: '1px solid #a2a9b1',
@@ -39,8 +45,8 @@ export default function Projects() {
             <div className="live-dot"></div>
             <span>LIVE</span>
           </div>
-          
-          <h2 style={{ 
+
+          <h2 style={{
             margin: '0 0 0.2em 0',
             color: '#202122',
             fontSize: '1.1em',
@@ -48,7 +54,7 @@ export default function Projects() {
           }}>
             🤖 Advanced AI Assistant with Human-in-the-Loop
           </h2>
-          
+
           <p style={{
             color: '#54595d',
             marginBottom: '0.5em',
@@ -57,7 +63,7 @@ export default function Projects() {
           }}>
             A smart conversational assistant built with LangGraph, Google Gemini, and Flask, featuring real-time web search, human-in-the-loop intervention, persistent memory, and production-ready deployment.
           </p>
-          
+
           {/* Tech Stack */}
           <div style={{ marginBottom: '0.7em' }}>
             <h3 style={{
@@ -86,7 +92,7 @@ export default function Projects() {
               ))}
             </div>
           </div>
-          
+
           {/* Features */}
           <div style={{ marginBottom: '0.7em' }}>
             <h3 style={{
@@ -115,7 +121,7 @@ export default function Projects() {
               ))}
             </div>
           </div>
-          
+
           {/* View Project Button */}
           <div style={{ textAlign: 'center' }}>
             <a
@@ -139,14 +145,14 @@ export default function Projects() {
             </a>
           </div>
         </div>
-        
+
         {/* Placeholder for future projects */}
-        <div style={{ 
-          padding: '0.8em', 
-        background: '#f8f9fa', 
-        border: '1px solid #a2a9b1', 
-        borderRadius: '4px',
-        textAlign: 'center',
+        <div style={{
+          padding: '0.8em',
+          background: '#f8f9fa',
+          border: '1px solid #a2a9b1',
+          borderRadius: '4px',
+          textAlign: 'center',
           marginTop: '0.2em',
           maxWidth: '350px'
         }}>
@@ -155,14 +161,14 @@ export default function Projects() {
             Additional projects will be added here as they are completed.
           </p>
         </div>
-        
+
       </div>
 
       <style jsx>{`
         .project-button:hover {
           background-color: #0b0080 !important;
         }
-        
+
         .live-dot {
           width: 6px;
           height: 6px;
@@ -170,7 +176,7 @@ export default function Projects() {
           border-radius: 50%;
           animation: pulse 2s infinite;
         }
-        
+
         @keyframes pulse {
           0% {
             opacity: 1;
@@ -185,7 +191,18 @@ export default function Projects() {
             transform: scale(1);
           }
         }
+
+        .mobile-menu-spacer {
+          display: none;
+          height: 3.5rem;
+        }
+
+        @media (max-width: 768px) {
+          .mobile-menu-spacer {
+            display: block;
+          }
+        }
       `}</style>
     </article>
   );
-} 
+}

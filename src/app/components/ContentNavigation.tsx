@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 import styles from "../Home.module.css";
 import MobileMenu from "./MobileMenu";
 
-// Navigation Component for cleaner code
 export default function ContentNavigation() {
   const pathname = usePathname();
   const navItems = [
@@ -38,4 +37,4 @@ export default function ContentNavigation() {
       </nav>
     </>
   );
-} 
+}
