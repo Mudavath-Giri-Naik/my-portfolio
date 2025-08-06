@@ -168,22 +168,29 @@
 @media (max-width: 768px) {
   .mainLayout {
     flex-direction: column;
-    gap: 1em;
-    margin: 1em;
-    padding: 0.5em;
+    gap: 0.5em;
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
   }
   
   .sidebar {
     max-width: 100%;
     min-width: 100%;
+    margin: 0;
+    padding: 0;
   }
   
   .profileCard {
     position: relative;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    margin-bottom: 1em;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    margin-bottom: 2em;
     padding: 2em;
+    margin-left: 0;
+    margin-right: 0;
+    background: transparent;
   }
   
   .profileImage {

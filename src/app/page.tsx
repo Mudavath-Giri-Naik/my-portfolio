@@ -96,7 +96,8 @@ export default function Home() {
             margin-bottom: 0.8em !important;
           }
           .mobile-content {
-            padding: 0.3em !important;
+            padding: 0 !important;
+            margin-top: 0 !important;
           }
         }
       `}</style>
