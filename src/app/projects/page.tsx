@@ -146,21 +146,7 @@ export default function Projects() {
           </div>
         </div>
 
-        {/* Placeholder for future projects */}
-        <div style={{
-          padding: '0.8em',
-          background: '#f8f9fa',
-          border: '1px solid #a2a9b1',
-          borderRadius: '4px',
-          textAlign: 'center',
-          marginTop: '0.2em',
-          maxWidth: '350px'
-        }}>
-          <h2 style={{ color: '#54595d', marginBottom: '0.4em', fontSize: '1em' }}>More Projects Coming Soon</h2>
-          <p style={{ color: '#54595d', fontSize: '0.8em' }}>
-            Additional projects will be added here as they are completed.
-          </p>
-        </div>
+
 
       </div>
 

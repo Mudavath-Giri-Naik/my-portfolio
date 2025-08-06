@@ -23,15 +23,10 @@ export default function ClientLayout({
 }) {
   const pathname = usePathname();
 
-  // Check if we're on the home page for mobile view
-  const isHomePage = pathname === '/';
-  const showProfile = isHomePage ? 'show-profile' : '';
-  const contentAreaClass = isHomePage ? '' : 'full-width';
-
   return (
     <div className={styles.mainLayout}>
       {/* --- Left Sidebar (Profile Card) --- */}
-      <aside className={`${styles.sidebar} ${showProfile}`}>
+      <aside className={styles.sidebar}>
         <div className={styles.profileCard}>
           <div className={styles.profileHeader}>
             <Image
@@ -135,7 +130,7 @@ export default function ClientLayout({
       </aside>
 
       {/* --- Right Side Content Area --- */}
-      <main className={`${styles.contentArea} ${contentAreaClass}`}>
+      <main className={styles.contentArea}>
         <ContentNavigation />
         <div className={styles.contentWrapper}>
           {children}

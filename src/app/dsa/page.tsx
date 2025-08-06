@@ -3,18 +3,14 @@ import Link from 'next/link';
 export default function DSA() {
   return (
     <article>
-      
       <div style={{ 
         padding: '2em', 
-        background: '#f8f9fa', 
-        border: '1px solid #a2a9b1', 
-        borderRadius: '4px',
         textAlign: 'center',
         marginTop: '2em'
       }}>
-        <h2 style={{ color: '#54595d', marginBottom: '1em' }}>Details Added Soon</h2>
+        <h2 style={{ color: '#54595d', marginBottom: '1em' }}>DSA</h2>
         <p style={{ color: '#54595d', fontSize: '1.1em' }}>
-          DSA problems and solutions will be added here soon.
+          DSA problems and solutions will be added here.
         </p>
       </div>
     </article>
