@@ -22,6 +22,26 @@ export default function Home() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
+  // Mobile-only: ensure only one details is expanded at a time
+  useEffect(() => {
+    if (!isMobile) return;
+    const container = document.querySelector('.mobile-content');
+    if (!container) return;
+    const detailsEls = Array.from(container.querySelectorAll('details')) as HTMLDetailsElement[];
+    const onToggle = (event: Event) => {
+      const current = event.currentTarget as HTMLDetailsElement;
+      if (current.open) {
+        detailsEls.forEach((el) => {
+          if (el !== current) el.open = false;
+        });
+      }
+    };
+    detailsEls.forEach((el) => el.addEventListener('toggle', onToggle));
+    return () => {
+      detailsEls.forEach((el) => el.removeEventListener('toggle', onToggle));
+    };
+  }, [isMobile]);
+
   return (
     <div>
       {/* Desktop: keep Projects page */}
