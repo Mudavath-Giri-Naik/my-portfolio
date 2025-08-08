@@ -20,7 +20,7 @@ export default function ContentNavigation() {
   };
 
   return (
-    <nav className={styles.contentNav}>
+    <nav className={styles.contentNav} role="navigation" aria-label="Primary">
       {navItems.map(item => (
         <Link 
           key={item.href}

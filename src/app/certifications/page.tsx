@@ -159,7 +159,7 @@ export default function Certifications() {
       <style jsx global>{`
         .certifications-section {
           padding: 4em 1em;
-          background-color: #f0f2f5;
+          background-color: var(--bg);
         }
 
         .certifications-grid {
@@ -171,10 +171,10 @@ export default function Certifications() {
         }
 
         .certification-card {
-          background: #ffffff;
-          border: 1px solid #e2e8f0;
-          border-radius: 12px;
-          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+          background: var(--surface);
+          border: 1px solid var(--border);
+          border-radius: 14px;
+          box-shadow: var(--shadow);
           display: flex;
           flex-direction: column;
           transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -182,11 +182,11 @@ export default function Certifications() {
 
         .certification-card:hover {
           transform: translateY(-5px);
-          box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 12px 24px rgba(16,24,40,0.08);
         }
 
         .card-content {
-          padding: 2rem;
+          padding: 1.5rem;
           flex-grow: 1;
           display: flex;
           flex-direction: column;
@@ -200,10 +200,10 @@ export default function Certifications() {
         }
 
         .card-title {
-          font-size: clamp(1.2rem, 3vw, 1.4rem);
-          font-weight: 600;
-          color: #2d3748;
-          font-family: 'Georgia', serif;
+          font-size: clamp(1.05rem, 2.5vw, 1.25rem);
+          font-weight: 700;
+          color: var(--text);
+          font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial;
           line-height: 1.3;
           padding-right: 1rem;
         }
@@ -211,15 +211,15 @@ export default function Certifications() {
         .card-issuer {
           text-align: right;
           font-size: 0.8rem;
-          color: #4a5568;
+          color: var(--muted);
           min-width: 90px;
           font-weight: 500;
         }
 
         .card-platform {
-          font-size: 0.95rem;
+          font-size: 0.9rem;
           font-style: italic;
-          color: #718096;
+          color: var(--muted);
           margin-bottom: 1.5rem;
           text-align: left;
         }
@@ -232,13 +232,13 @@ export default function Certifications() {
         }
 
         .skill-tag {
-          font-size: 0.75rem;
-          background: #edf2f7;
-          padding: 0.4rem 0.8rem;
-          border-radius: 15px;
-          border: 1px solid #e2e8f0;
-          color: #4a5568;
-          font-weight: 500;
+          font-size: 0.72rem;
+          background: rgba(37,99,235,0.08);
+          padding: 0.35rem 0.7rem;
+          border-radius: 9999px;
+          border: 1px solid rgba(37,99,235,0.18);
+          color: var(--primary-700);
+          font-weight: 600;
         }
 
         .card-button-container {
@@ -249,20 +249,22 @@ export default function Certifications() {
 
         .card-button {
           display: inline-block;
-          background-color: #2b6cb0;
+          background-color: var(--primary-600);
           color: #ffffff;
-          padding: 0.7rem 1.8rem;
-          border-radius: 8px;
+          padding: 0.6rem 1.4rem;
+          border-radius: 10px;
           font-size: 0.9rem;
-          font-weight: 600;
+          font-weight: 700;
           text-decoration: none;
-          transition: background-color 0.3s ease, transform 0.2s ease;
-          border-bottom: 3px solid #1a365d;
+          transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+          border-bottom: 0;
+          box-shadow: 0 1px 2px rgba(16, 24, 40, 0.06);
         }
 
         .card-button:hover {
-          background-color: #2c5282;
-          transform: translateY(-2px);
+          background-color: var(--primary-700);
+          transform: translateY(-1px);
+          box-shadow: 0 6px 16px rgba(37, 99, 235, 0.24);
         }
         
         @media (max-width: 768px) {

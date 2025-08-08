@@ -3,6 +3,7 @@
 import styles from "./Home.module.css";
 import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
+import { FiChevronDown } from 'react-icons/fi';
 
 // Dynamically import each section to avoid SSR issues
 const Projects = dynamic(() => import('./projects/page'), { ssr: false });
@@ -23,81 +24,142 @@ export default function Home() {
 
   return (
     <div>
-      {/* Desktop View - Redirect to Projects by default */}
-      {!isMobile && (
-        <Projects />
-      )}
+      {/* Desktop: keep Projects page */}
+      {!isMobile && <Projects />}
 
-      {/* Mobile View - All sections displayed one after another, using their real UI */}
+      {/* Mobile: collapsible cards per section */}
       {isMobile && (
-        <div className="mobile-content">
-          <h2 className="mobile-section-heading">Projects</h2>
-          <Projects />
-          <h2 className="mobile-section-heading">Contributions</h2>
-          <Contributions />
-          <h2 className="mobile-section-heading">Achievements</h2>
-          <Achievements />
-          <h2 className="mobile-section-heading">Blogs</h2>
-          <Blogs />
-          <h2 className="mobile-section-heading">Certifications</h2>
-          <Certifications />
+        <div className="mobile-shell">
+          <main className="mobile-content">
+            <section id="projects" className="mobile-card">
+              <details open>
+                <summary>
+                  <span className="summary-title">Projects</span>
+                  <FiChevronDown className="summary-icon" />
+                </summary>
+                <div className="mobile-card-inner projects-inner">
+                  <Projects />
+                </div>
+              </details>
+            </section>
+
+            <section id="contributions" className="mobile-card">
+              <details>
+                <summary>
+                  <span className="summary-title">Contributions</span>
+                  <FiChevronDown className="summary-icon" />
+                </summary>
+                <div className="mobile-card-inner">
+                  <Contributions />
+                </div>
+              </details>
+            </section>
+
+            <section id="achievements" className="mobile-card">
+              <details>
+                <summary>
+                  <span className="summary-title">Achievements</span>
+                  <FiChevronDown className="summary-icon" />
+                </summary>
+                <div className="mobile-card-inner">
+                  <Achievements />
+                </div>
+              </details>
+            </section>
+
+            <section id="blogs" className="mobile-card">
+              <details>
+                <summary>
+                  <span className="summary-title">Blogs</span>
+                  <FiChevronDown className="summary-icon" />
+                </summary>
+                <div className="mobile-card-inner">
+                  <Blogs />
+                </div>
+              </details>
+            </section>
+
+            <section id="certifications" className="mobile-card">
+              <details>
+                <summary>
+                  <span className="summary-title">Certifications</span>
+                  <FiChevronDown className="summary-icon" />
+                </summary>
+                <div className="mobile-card-inner">
+                  <Certifications />
+                </div>
+              </details>
+            </section>
+          </main>
         </div>
       )}
-      {/* Compact mobile styles for headings and content */}
+
+      {/* Mobile styles */}
       <style jsx global>{`
         @media (max-width: 768px) {
-          .mobile-section-heading {
-            font-size: 1.1rem !important;
-            margin: 1.2em 0 0.5em 0 !important;
-            padding: 0.2em 0.5em !important;
-            color: #1a202c !important;
-            font-weight: 700 !important;
-            letter-spacing: 0.01em;
-            background: #f5f5f5;
-            border-radius: 6px;
-            text-align: left;
-          }
-          /* Make all articles and cards more compact */
-          article, .certification-card, .card-content, .mobile-project-card, .mobile-certification-card {
-            padding: 0.8em !important;
-          }
-          .certifications-section {
-            padding: 1.5em 0.5em !important;
-          }
-          .certifications-grid {
-            gap: 1.2em !important;
-          }
-          .card-title, .card-header h3, .mobile-project-card h3, .mobile-section-header h2 {
-            font-size: 1rem !important;
-            margin-bottom: 0.3em !important;
-          }
-          .card-platform, .cert-platform {
-            font-size: 0.8rem !important;
-            margin-bottom: 0.5em !important;
-          }
-          .card-skills, .cert-skills, .tech-tags, .feature-tags {
-            gap: 0.2em !important;
-            margin-bottom: 0.5em !important;
-          }
-          .skill-tag, .cert-skill-tag, .tech-tag, .feature-tag {
-            font-size: 0.65rem !important;
-            padding: 0.15em 0.4em !important;
-          }
-          .card-button, .cert-button, .project-button {
-            font-size: 0.75rem !important;
-            padding: 0.4em 1em !important;
-            border-radius: 4px !important;
-          }
-          .card-issuer, .cert-issuer {
-            font-size: 0.7rem !important;
-            min-width: 60px !important;
-          }
-          .mobile-content > * {
-            margin-bottom: 0.8em !important;
+          .mobile-shell {
+            padding-bottom: 0;
+            background: #ffffff;
           }
           .mobile-content {
-            padding: 0 !important;
+            padding: 0.6rem;
+          }
+          .mobile-card {
+            margin: 0.6rem 0 0.8rem 0;
+          }
+          /* Ensure equal left/right spacing and original width for project cards on mobile */
+          .mobile-card .project-card {
+            max-width: 350px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            width: 100%;
+          }
+          .mobile-card details {
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            background: var(--surface);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: box-shadow 0.2s ease, border-color 0.2s ease;
+          }
+          .mobile-card summary {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.8rem 0.9rem;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text);
+            background: #f8fafc;
+          }
+          .mobile-card summary::-webkit-details-marker { display: none; }
+          .summary-icon {
+            transition: transform 0.2s ease;
+            color: var(--text);
+            width: 18px; height: 18px;
+            flex-shrink: 0;
+          }
+          .mobile-card details[open] .summary-icon {
+            transform: rotate(180deg);
+          }
+          .mobile-card details[open] {
+            border-color: rgba(37,99,235,0.35);
+            box-shadow: 0 6px 16px rgba(37, 99, 235, 0.12), var(--shadow);
+          }
+          .mobile-card-inner {
+            padding: 0.6rem 0.6rem 0.9rem 0.6rem;
+          }
+          .mobile-card details[open] .mobile-card-inner {
+            animation: fadeSlide 0.18s ease;
+          }
+          @keyframes fadeSlide {
+            from { opacity: 0; transform: translateY(-4px); }
+            to { opacity: 1; transform: translateY(0); }
+          }
+          .projects-inner > article {
             margin-top: 0 !important;
+            padding-top: 0 !important;
           }
         }
       `}</style>

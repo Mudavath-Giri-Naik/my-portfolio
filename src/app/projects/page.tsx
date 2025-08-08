@@ -6,28 +6,25 @@ export default function Projects() {
   return (
     <article
       style={{
-        marginTop: '1.5rem',
-        paddingTop: '1rem',
+        marginTop: '0.25rem',
+        paddingTop: 0,
       }}
     >
-      {/* Spacer to avoid overlap with mobile menu (only visible on mobile) */}
-      <div className="mobile-menu-spacer" />
-
       <div style={{
         display: 'grid',
         gap: '0.8em',
-        marginTop: '0.8em'
+        marginTop: '0.25em'
       }}>
 
         {/* AI Assistant Project */}
-        <div style={{
-          border: '1px solid #a2a9b1',
-          borderRadius: '4px',
+        <div className="project-card" style={{
+          border: '1px solid var(--border)',
+          borderRadius: '14px',
           overflow: 'hidden',
-          background: '#fff',
-          boxShadow: '0 1px 2px rgba(0,0,0,0.1)',
-          maxWidth: '350px',
-          padding: '0.7em',
+          background: 'var(--surface)',
+          boxShadow: 'var(--shadow)',
+          maxWidth: '300px',
+          padding: '0.6em',
           position: 'relative'
         }}>
           {/* Live Icon */}
@@ -48,28 +45,28 @@ export default function Projects() {
 
           <h2 style={{
             margin: '0 0 0.2em 0',
-            color: '#202122',
-            fontSize: '1.1em',
+            color: 'var(--text)',
+            fontSize: '1.0em',
             paddingRight: '3em'
           }}>
             🤖 Advanced AI Assistant with Human-in-the-Loop
           </h2>
 
           <p style={{
-            color: '#54595d',
+            color: 'var(--muted)',
             marginBottom: '0.5em',
             lineHeight: '1.4',
-            fontSize: '0.8em'
+            fontSize: '0.75em'
           }}>
             A smart conversational assistant built with LangGraph, Google Gemini, and Flask, featuring real-time web search, human-in-the-loop intervention, persistent memory, and production-ready deployment.
           </p>
 
           {/* Tech Stack */}
           <div style={{ marginBottom: '0.7em' }}>
-            <h3 style={{
+              <h3 style={{
               fontSize: '0.85em',
               margin: '0 0 0.2em 0',
-              color: '#202122'
+                color: 'var(--text)'
             }}>
               Tech Stack:
             </h3>
@@ -80,12 +77,12 @@ export default function Projects() {
             }}>
               {['Python', 'LangGraph', 'Gemini', 'Flask', 'Tavily', 'Docker'].map((tech) => (
                 <span key={tech} style={{
-                  background: '#e8f4fd',
-                  color: '#0645ad',
-                  padding: '0.15em 0.4em',
+                  background: 'rgba(37,99,235,0.08)',
+                  color: 'var(--primary-700)',
+                  padding: '0.15em 0.35em',
                   borderRadius: '3px',
-                  fontSize: '0.7em',
-                  border: '1px solid #a7d7f9'
+                  fontSize: '0.65em',
+                  border: '1px solid rgba(37,99,235,0.18)'
                 }}>
                   {tech}
                 </span>
@@ -95,10 +92,10 @@ export default function Projects() {
 
           {/* Features */}
           <div style={{ marginBottom: '0.7em' }}>
-            <h3 style={{
+              <h3 style={{
               fontSize: '0.85em',
               margin: '0 0 0.2em 0',
-              color: '#202122'
+                color: 'var(--text)'
             }}>
               Features:
             </h3>
@@ -109,12 +106,12 @@ export default function Projects() {
             }}>
               {['HITL', 'session memory', 'real-time search', 'secure & scalable'].map((feature) => (
                 <span key={feature} style={{
-                  background: '#f0f9ff',
+                  background: 'rgba(2,132,199,0.08)',
                   color: '#0369a1',
                   padding: '0.15em 0.4em',
                   borderRadius: '3px',
-                  fontSize: '0.7em',
-                  border: '1px solid #bae6fd'
+                  fontSize: '0.65em',
+                  border: '1px solid rgba(2,132,199,0.18)'
                 }}>
                   {feature}
                 </span>
@@ -130,14 +127,14 @@ export default function Projects() {
               rel="noopener noreferrer"
               style={{
                 display: 'inline-block',
-                background: '#0645ad',
+                background: 'var(--primary-600)',
                 color: '#fff',
-                padding: '0.4em 0.8em',
+                padding: '0.35em 0.7em',
                 textDecoration: 'none',
                 borderRadius: '3px',
                 fontWeight: '500',
                 transition: 'background-color 0.2s',
-                fontSize: '0.8em'
+                fontSize: '0.75em'
               }}
               className="project-button"
             >
@@ -156,8 +153,8 @@ export default function Projects() {
         }
 
         .live-dot {
-          width: 6px;
-          height: 6px;
+          width: 5px;
+          height: 5px;
           background-color: #22c55e;
           border-radius: 50%;
           animation: pulse 2s infinite;
