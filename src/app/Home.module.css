@@ -186,64 +186,64 @@
     border-radius: 0;
     box-shadow: none;
     border: none;
-    margin-bottom: 2.25em;
-    padding: 2.25em 1.5em;
+    margin-bottom: 1.5em;
+    padding: 1.7em 1.35em;
     margin-left: 0;
     margin-right: 0;
     background: transparent;
   }
   
   .profileImage {
-    width: 200px;
-    height: 200px;
+    width: 190px;
+    height: 190px;
   }
   
   .profileHeaderTextBelow h1 {
-    font-size: 2.4em;
-    margin: 0.35em 0 0.25em 0;
+    font-size: 2.2em;
+    margin: 0.28em 0 0.22em 0;
   }
   
   .profileHeaderTextBelow p {
-    font-size: 1.2em;
+    font-size: 1.12em;
   }
   
   .detailsList {
-    padding: 1.75em 0;
-    font-size: 1.05em;
+    padding: 1.4em 0;
+    font-size: 1.08em;
   }
   
   .detailsList li {
-    font-size: 1.15em;
-    gap: 1.1em;
-    margin-bottom: 1.1em;
+    font-size: 1.1em;
+    gap: 1.05em;
+    margin-bottom: 0.95em;
   }
   
   .detailIcon {
-    font-size: 1.4em;
+    font-size: 1.32em;
   }
   
   .detailText {
-    line-height: 1.7;
+    line-height: 1.65;
   }
   
   .detailText strong {
-    font-size: 1.15em;
+    font-size: 1.12em;
   }
   
   .socialLinks {
-    gap: 1.6em;
-    margin-top: 2.2em;
-    font-size: 1.15em;
+    gap: 1.3em;
+    margin-top: 1.5em;
+    font-size: 1.1em;
   }
   
   .socialIcon {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
   
   .contentArea {
     width: 100%;
     max-width: 100%;
-    padding: 0.75em 0;
+    padding: 0.55em 0;
   }
   
   /* Hide navigation on mobile since all content is shown in one page */
