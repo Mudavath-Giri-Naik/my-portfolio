@@ -134,11 +134,14 @@ export default function Certifications() {
                 </p>
 
                 <div className="card-skills">
-                  {cert.skills.map((skill) => (
+                  {cert.skills.slice(0, 2).map((skill) => (
                     <span key={skill} className="skill-tag">
                       {skill}
                     </span>
                   ))}
+                  {cert.skills.length > 2 && (
+                    <span className="skill-more">+{cert.skills.length - 2} more</span>
+                  )}
                 </div>
 
                 <div style={{ flexGrow: 1 }}></div>
@@ -158,14 +161,14 @@ export default function Certifications() {
       </section>
       <style jsx global>{`
         .certifications-section {
-          padding: 4em 1em;
+          padding: 0 1em 3em;
           background-color: var(--bg);
         }
 
         .certifications-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-          gap: 2.5rem;
+          grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+          gap: 1.2rem;
           max-width: 1200px;
           margin: 0 auto;
         }
@@ -173,7 +176,7 @@ export default function Certifications() {
         .certification-card {
           background: var(--surface);
           border: 1px solid var(--border);
-          border-radius: 14px;
+          border-radius: 10px;
           box-shadow: var(--shadow);
           display: flex;
           flex-direction: column;
@@ -186,7 +189,7 @@ export default function Certifications() {
         }
 
         .card-content {
-          padding: 1.5rem;
+          padding: 1rem;
           flex-grow: 1;
           display: flex;
           flex-direction: column;
@@ -196,64 +199,78 @@ export default function Certifications() {
           display: flex;
           justify-content: space-between;
           align-items: flex-start;
-          margin-bottom: 0.5rem;
+          margin-bottom: 0.35rem;
         }
 
         .card-title {
-          font-size: clamp(1.05rem, 2.5vw, 1.25rem);
+          font-size: clamp(0.98rem, 2vw, 1.08rem);
           font-weight: 700;
           color: var(--text);
           font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial;
-          line-height: 1.3;
-          padding-right: 1rem;
+          line-height: 1.25;
+          padding-right: 0.5rem;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
         }
 
         .card-issuer {
           text-align: right;
-          font-size: 0.8rem;
+          font-size: 0.75rem;
           color: var(--muted);
           min-width: 90px;
           font-weight: 500;
         }
 
         .card-platform {
-          font-size: 0.9rem;
+          font-size: 0.85rem;
           font-style: italic;
           color: var(--muted);
-          margin-bottom: 1.5rem;
+          margin-bottom: 0.6rem;
           text-align: left;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
 
         .card-skills {
           display: flex;
-          flex-wrap: wrap;
-          gap: 0.5rem;
-          margin-bottom: 2rem;
+          flex-wrap: nowrap;
+          align-items: center;
+          gap: 0.4rem;
+          margin-bottom: 0.6rem;
         }
 
         .skill-tag {
-          font-size: 0.72rem;
+          font-size: 0.68rem;
           background: rgba(37,99,235,0.08);
-          padding: 0.35rem 0.7rem;
+          padding: 0.25rem 0.55rem;
           border-radius: 9999px;
           border: 1px solid rgba(37,99,235,0.18);
           color: var(--primary-700);
           font-weight: 600;
         }
 
+        .skill-more {
+          font-size: 0.68rem;
+          color: var(--muted);
+          font-weight: 600;
+        }
+
         .card-button-container {
           text-align: center;
           margin-top: auto;
-          padding-top: 1rem;
+          padding-top: 0.5rem;
         }
 
         .card-button {
           display: inline-block;
           background-color: var(--primary-600);
           color: #ffffff;
-          padding: 0.6rem 1.4rem;
-          border-radius: 10px;
-          font-size: 0.9rem;
+          padding: 0.45rem 1rem;
+          border-radius: 8px;
+          font-size: 0.82rem;
           font-weight: 700;
           text-decoration: none;
           transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
@@ -267,10 +284,20 @@ export default function Certifications() {
           box-shadow: 0 6px 16px rgba(37, 99, 235, 0.24);
         }
         
+        @media (max-width: 1024px) {
+          .certifications-grid {
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+          }
+        }
+
         @media (max-width: 768px) {
           .certifications-grid {
             grid-template-columns: 1fr;
           }
+          .card-content { padding: 0.9rem; }
+          .card-title { font-size: clamp(0.95rem, 3vw, 1.05rem); }
+          .card-platform { font-size: 0.82rem; }
+          .card-button { font-size: 0.82rem; padding: 0.45rem 0.95rem; }
         }
       `}</style>
     </>
