@@ -46,11 +46,11 @@ export default function ClientLayout({
           <ul className={styles.detailsList}>
             <li>
               <FaBirthdayCake className={styles.detailIcon} />
-              <div className={styles.detailText}>15-06-2005</div>
+              <div className={styles.detailText}>08-03-2005</div>
             </li>
             <li>
               <FaMapMarkerAlt className={styles.detailIcon} />
-              <div className={styles.detailText}>Bengaluru, India</div>
+              <div className={styles.detailText}>Vizag, India</div>
             </li>
             <li>
               <FaUniversity className={styles.detailIcon} />
