@@ -23,6 +23,10 @@ export default function ClientLayout({
 }) {
   const pathname = usePathname();
 
+  if (pathname === "/") {
+    return <div className={styles.homeStandalone}>{children}</div>;
+  }
+
   return (
     <div className={styles.mainLayout}>
       {/* --- Left Sidebar (Profile Card) --- */}

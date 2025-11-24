@@ -1,188 +1,120 @@
 "use client";
 
+import Image from "next/image";
 import styles from "./Home.module.css";
-import dynamic from 'next/dynamic';
-import { useEffect, useState } from 'react';
-import { FiChevronDown } from 'react-icons/fi';
+import dynamic from "next/dynamic";
+import type { ReactNode } from "react";
+import { FiChevronDown, FiCode, FiGitBranch, FiAward, FiBookOpen, FiFlag } from "react-icons/fi";
+import { FiGithub, FiLinkedin } from "react-icons/fi";
+import { FaInstagram, FaEnvelope } from "react-icons/fa6";
+import { SiLeetcode, SiCodechef } from "react-icons/si";
 
-// Dynamically import each section to avoid SSR issues
-const Projects = dynamic(() => import('./projects/page'), { ssr: false });
-const Contributions = dynamic(() => import('./contributions/page'), { ssr: false });
-const Achievements = dynamic(() => import('./achievements/page'), { ssr: false });
-const Certifications = dynamic(() => import('./certifications/page'), { ssr: false });
-const Blogs = dynamic(() => import('./blogs/page'), { ssr: false });
+const Projects = dynamic(() => import("./projects/page"), { ssr: false });
+const Contributions = dynamic(() => import("./contributions/page"), { ssr: false });
+const Achievements = dynamic(() => import("./achievements/page"), { ssr: false });
+const Certifications = dynamic(() => import("./certifications/page"), { ssr: false });
+const Blogs = dynamic(() => import("./blogs/page"), { ssr: false });
+
+type SectionBlock = {
+  id: string;
+  title: string;
+  icon: ReactNode;
+  content: ReactNode;
+};
+
+const sections: SectionBlock[] = [
+  { id: "projects", title: "Projects", icon: <FiCode />, content: <Projects /> },
+  { id: "contributions", title: "Contributions", icon: <FiGitBranch />, content: <Contributions /> },
+  { id: "achievements", title: "Achievements", icon: <FiAward />, content: <Achievements /> },
+  { id: "blogs", title: "Blogs", icon: <FiBookOpen />, content: <Blogs /> },
+  { id: "certifications", title: "Certifications", icon: <FiFlag />, content: <Certifications /> },
+];
 
 export default function Home() {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
-  // Mobile-only: ensure only one details is expanded at a time
-  useEffect(() => {
-    if (!isMobile) return;
-    const container = document.querySelector('.mobile-content');
-    if (!container) return;
-    const detailsEls = Array.from(container.querySelectorAll('details')) as HTMLDetailsElement[];
-    const onToggle = (event: Event) => {
-      const current = event.currentTarget as HTMLDetailsElement;
-      if (current.open) {
-        detailsEls.forEach((el) => {
-          if (el !== current) el.open = false;
-        });
-      }
-    };
-    detailsEls.forEach((el) => el.addEventListener('toggle', onToggle));
-    return () => {
-      detailsEls.forEach((el) => el.removeEventListener('toggle', onToggle));
-    };
-  }, [isMobile]);
-
   return (
-    <div>
-      {/* Desktop: keep Projects page */}
-      {!isMobile && <Projects />}
-
-      {/* Mobile: collapsible cards per section */}
-      {isMobile && (
-        <div className="mobile-shell">
-          <main className="mobile-content">
-            <section id="projects" className="mobile-card">
-              <details open>
-                <summary>
-                  <span className="summary-title">Projects</span>
-                  <FiChevronDown className="summary-icon" />
-                </summary>
-                <div className="mobile-card-inner projects-inner">
-                  <Projects />
-                </div>
-              </details>
-            </section>
-
-            <section id="contributions" className="mobile-card">
-              <details>
-                <summary>
-                  <span className="summary-title">Contributions</span>
-                  <FiChevronDown className="summary-icon" />
-                </summary>
-                <div className="mobile-card-inner">
-                  <Contributions />
-                </div>
-              </details>
-            </section>
-
-            <section id="achievements" className="mobile-card">
-              <details>
-                <summary>
-                  <span className="summary-title">Achievements</span>
-                  <FiChevronDown className="summary-icon" />
-                </summary>
-                <div className="mobile-card-inner">
-                  <Achievements />
-                </div>
-              </details>
-            </section>
-
-            <section id="blogs" className="mobile-card">
-              <details>
-                <summary>
-                  <span className="summary-title">Blogs</span>
-                  <FiChevronDown className="summary-icon" />
-                </summary>
-                <div className="mobile-card-inner">
-                  <Blogs />
-                </div>
-              </details>
-            </section>
-
-            <section id="certifications" className="mobile-card">
-              <details>
-                <summary>
-                  <span className="summary-title">Certifications</span>
-                  <FiChevronDown className="summary-icon" />
-                </summary>
-                <div className="mobile-card-inner">
-                  <Certifications />
-                </div>
-              </details>
-            </section>
-          </main>
+    <div className={styles.heroPage}>
+      {/* Curved Lines Background */}
+      <div className={styles.curvedLines}>
+        <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+          <path d="M0,200 Q300,100 600,200 T1200,200" stroke="#000" strokeWidth="1.5" fill="none" opacity="0.3" />
+          <path d="M0,400 Q400,300 800,400 T1600,400" stroke="#000" strokeWidth="1.5" fill="none" opacity="0.25" />
+          <path d="M0,600 Q200,500 400,600 T800,600" stroke="#000" strokeWidth="1.5" fill="none" opacity="0.2" />
+          <path d="M200,0 Q200,200 200,400 T200,800" stroke="#000" strokeWidth="1.5" fill="none" opacity="0.3" />
+          <path d="M600,0 Q600,200 600,400 T600,800" stroke="#000" strokeWidth="1.5" fill="none" opacity="0.25" />
+          <path d="M1000,0 Q1000,200 1000,400 T1000,800" stroke="#000" strokeWidth="1.5" fill="none" opacity="0.2" />
+        </svg>
+      </div>
+      
+      {/* Animated Background Shapes */}
+      <div className={styles.animatedShapes}>
+        <div className={styles.shape1}></div>
+        <div className={styles.shape2}></div>
+        <div className={styles.shape3}></div>
+        <div className={styles.shape4}></div>
+        <div className={styles.shape5}></div>
+        <div className={styles.shape6}></div>
+      </div>
+      
+      <section className={styles.heroPanel}>
+        <div className={styles.logoContainer}>
+          <Image
+            src="/profile.jpg"
+            alt="Giri Naik"
+            width={120}
+            height={120}
+            className={styles.profileLogo}
+            priority
+          />
         </div>
-      )}
+        <h1 className={styles.heroName}>GIRI NAIK</h1>
+        <p className={styles.heroTagline}>Student Developer</p>
+        <div className={styles.heroSocials}>
+          <a href="https://github.com/Mudavath-Giri-Naik" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <FiGithub />
+          </a>
+          <a href="https://www.linkedin.com/in/giri-naik/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <FiLinkedin />
+          </a>
+          <a href="https://leetcode.com/u/Mudavathgirinaik/" target="_blank" rel="noopener noreferrer" aria-label="LeetCode">
+            <SiLeetcode />
+          </a>
+          <a href="https://www.codechef.com/" target="_blank" rel="noopener noreferrer" aria-label="CodeChef">
+            <SiCodechef />
+          </a>
+          <a href="mailto:yourgirinaik@gmail.com" aria-label="Email">
+            <FaEnvelope />
+          </a>
+        </div>
+      </section>
 
-      {/* Mobile styles */}
-      <style jsx global>{`
-        @media (max-width: 768px) {
-          .mobile-shell {
-            padding-bottom: 0;
-            background: #ffffff;
-          }
-          .mobile-content {
-            padding: 0.6rem;
-          }
-          .mobile-card {
-            margin: 0.6rem 0 0.8rem 0;
-          }
-          /* Ensure equal left/right spacing and original width for project cards on mobile */
-          .mobile-card .project-card {
-            max-width: 350px !important;
-            margin-left: auto !important;
-            margin-right: auto !important;
-            width: 100%;
-          }
-          .mobile-card details {
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            background: var(--surface);
-            box-shadow: var(--shadow);
-            overflow: hidden;
-            transition: box-shadow 0.2s ease, border-color 0.2s ease;
-          }
-          .mobile-card summary {
-            list-style: none;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0.8rem 0.9rem;
-            cursor: pointer;
-            font-weight: 600;
-            color: var(--text);
-            background: #f8fafc;
-          }
-          .mobile-card summary::-webkit-details-marker { display: none; }
-          .summary-icon {
-            transition: transform 0.2s ease;
-            color: var(--text);
-            width: 18px; height: 18px;
-            flex-shrink: 0;
-          }
-          .mobile-card details[open] .summary-icon {
-            transform: rotate(180deg);
-          }
-          .mobile-card details[open] {
-            border-color: rgba(37,99,235,0.35);
-            box-shadow: 0 6px 16px rgba(37, 99, 235, 0.12), var(--shadow);
-          }
-          .mobile-card-inner {
-            padding: 0.6rem 0.6rem 0.9rem 0.6rem;
-          }
-          .mobile-card details[open] .mobile-card-inner {
-            animation: fadeSlide 0.18s ease;
-          }
-          @keyframes fadeSlide {
-            from { opacity: 0; transform: translateY(-4px); }
-            to { opacity: 1; transform: translateY(0); }
-          }
-          .projects-inner > article {
-            margin-top: 0 !important;
-            padding-top: 0 !important;
-          }
-        }
-      `}</style>
+      <section className={styles.accordionStack}>
+        <div className={styles.accordionIntro}>
+          <h2>About Me</h2>
+          <p>
+            I'm a passionate developer crafting beautiful digital experiences. With expertise in modern web technologies, 
+            AI & Machine Learning, I transform ideas into elegant, functional solutions. I believe in clean code, 
+            minimalist design, and making the web a better place one project at a time.
+          </p>
+        </div>
+
+        {sections.map((section, index) => (
+          <details
+            key={section.id}
+            id={section.id}
+            className={styles.accordionCard}
+            defaultOpen={index === 0}
+          >
+            <summary>
+              <div className={styles.summaryLeft}>
+                <span className={styles.summaryIcon}>{section.icon}</span>
+                <span>{section.title}</span>
+              </div>
+              <FiChevronDown className={styles.chevronIcon} aria-hidden="true" />
+            </summary>
+            <div className={styles.accordionBody}>{section.content}</div>
+          </details>
+        ))}
+      </section>
     </div>
   );
 }
