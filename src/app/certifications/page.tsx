@@ -176,16 +176,15 @@ export default function Certifications() {
         .certification-card {
           background: var(--surface);
           border: 1px solid var(--border);
-          border-radius: 10px;
-          box-shadow: var(--shadow);
+          border-radius: 0;
+          box-shadow: none;
           display: flex;
           flex-direction: column;
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          transition: none;
         }
 
         .certification-card:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 12px 24px rgba(16,24,40,0.08);
+          opacity: 0.9;
         }
 
         .card-content {
@@ -218,7 +217,7 @@ export default function Certifications() {
         .card-issuer {
           text-align: right;
           font-size: 0.75rem;
-          color: var(--muted);
+          color: var(--text);
           min-width: 90px;
           font-weight: 500;
         }
@@ -226,7 +225,7 @@ export default function Certifications() {
         .card-platform {
           font-size: 0.85rem;
           font-style: italic;
-          color: var(--muted);
+          color: var(--text);
           margin-bottom: 0.6rem;
           text-align: left;
           white-space: nowrap;
@@ -244,17 +243,17 @@ export default function Certifications() {
 
         .skill-tag {
           font-size: 0.68rem;
-          background: rgba(37,99,235,0.08);
+          background: var(--surface);
           padding: 0.25rem 0.55rem;
-          border-radius: 9999px;
-          border: 1px solid rgba(37,99,235,0.18);
-          color: var(--primary-700);
+          border-radius: 0;
+          border: 1px solid var(--border);
+          color: var(--text);
           font-weight: 600;
         }
 
         .skill-more {
           font-size: 0.68rem;
-          color: var(--muted);
+          color: var(--text);
           font-weight: 600;
         }
 
@@ -266,22 +265,20 @@ export default function Certifications() {
 
         .card-button {
           display: inline-block;
-          background-color: var(--primary-600);
-          color: #ffffff;
+          background-color: var(--surface);
+          color: var(--text);
           padding: 0.45rem 1rem;
-          border-radius: 8px;
+          border-radius: 0;
           font-size: 0.82rem;
           font-weight: 700;
           text-decoration: none;
-          transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-          border-bottom: 0;
-          box-shadow: 0 1px 2px rgba(16, 24, 40, 0.06);
+          transition: none;
+          border: 1px solid var(--border);
+          box-shadow: none;
         }
 
         .card-button:hover {
-          background-color: var(--primary-700);
-          transform: translateY(-1px);
-          box-shadow: 0 6px 16px rgba(37, 99, 235, 0.24);
+          opacity: 0.7;
         }
         
         @media (max-width: 1024px) {

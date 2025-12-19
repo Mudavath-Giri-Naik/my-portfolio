@@ -19,10 +19,10 @@ export default function Projects() {
         {/* AI Assistant Project */}
         <div className="project-card" style={{
           border: '1px solid var(--border)',
-          borderRadius: '14px',
+          borderRadius: '0',
           overflow: 'hidden',
           background: 'var(--surface)',
-          boxShadow: 'var(--shadow)',
+          boxShadow: 'none',
           maxWidth: '300px',
           padding: '0.6em',
           position: 'relative'
@@ -36,10 +36,9 @@ export default function Projects() {
             alignItems: 'center',
             gap: '0.3em',
             fontSize: '0.7em',
-            color: '#22c55e',
+            color: 'var(--text)',
             fontWeight: '500'
           }}>
-            <div className="live-dot"></div>
             <span>LIVE</span>
           </div>
 
@@ -49,11 +48,11 @@ export default function Projects() {
             fontSize: '1.0em',
             paddingRight: '3em'
           }}>
-            🤖 Advanced AI Assistant with Human-in-the-Loop
+            Advanced AI Assistant with Human-in-the-Loop
           </h2>
 
           <p style={{
-            color: 'var(--muted)',
+            color: 'var(--text)',
             marginBottom: '0.5em',
             lineHeight: '1.4',
             fontSize: '0.75em'
@@ -77,12 +76,12 @@ export default function Projects() {
             }}>
               {['Python', 'LangGraph', 'Gemini', 'Flask', 'Tavily', 'Docker'].map((tech) => (
                 <span key={tech} style={{
-                  background: 'rgba(37,99,235,0.08)',
-                  color: 'var(--primary-700)',
+                  background: 'var(--surface)',
+                  color: 'var(--text)',
                   padding: '0.15em 0.35em',
-                  borderRadius: '3px',
+                  borderRadius: '0',
                   fontSize: '0.65em',
-                  border: '1px solid rgba(37,99,235,0.18)'
+                  border: '1px solid var(--border)'
                 }}>
                   {tech}
                 </span>
@@ -106,12 +105,12 @@ export default function Projects() {
             }}>
               {['HITL', 'session memory', 'real-time search', 'secure & scalable'].map((feature) => (
                 <span key={feature} style={{
-                  background: 'rgba(2,132,199,0.08)',
-                  color: '#0369a1',
+                  background: 'var(--surface)',
+                  color: 'var(--text)',
                   padding: '0.15em 0.4em',
-                  borderRadius: '3px',
+                  borderRadius: '0',
                   fontSize: '0.65em',
-                  border: '1px solid rgba(2,132,199,0.18)'
+                  border: '1px solid var(--border)'
                 }}>
                   {feature}
                 </span>
@@ -127,14 +126,15 @@ export default function Projects() {
               rel="noopener noreferrer"
               style={{
                 display: 'inline-block',
-                background: 'var(--primary-600)',
-                color: '#fff',
+                background: 'var(--surface)',
+                color: 'var(--text)',
                 padding: '0.35em 0.7em',
                 textDecoration: 'none',
-                borderRadius: '3px',
+                borderRadius: '0',
                 fontWeight: '500',
-                transition: 'background-color 0.2s',
-                fontSize: '0.75em'
+                transition: 'none',
+                fontSize: '0.75em',
+                border: '1px solid var(--border)'
               }}
               className="project-button"
             >
@@ -149,30 +149,7 @@ export default function Projects() {
 
       <style jsx>{`
         .project-button:hover {
-          background-color: #0b0080 !important;
-        }
-
-        .live-dot {
-          width: 5px;
-          height: 5px;
-          background-color: #22c55e;
-          border-radius: 50%;
-          animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-          0% {
-            opacity: 1;
-            transform: scale(1);
-          }
-          50% {
-            opacity: 0.5;
-            transform: scale(1.2);
-          }
-          100% {
-            opacity: 1;
-            transform: scale(1);
-          }
+          opacity: 0.7;
         }
 
         .mobile-menu-spacer {

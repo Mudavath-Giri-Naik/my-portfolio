@@ -33,28 +33,6 @@ const sections: SectionBlock[] = [
 export default function Home() {
   return (
     <div className={styles.heroPage}>
-      {/* Curved Lines Background */}
-      <div className={styles.curvedLines}>
-        <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
-          <path d="M0,200 Q300,100 600,200 T1200,200" stroke="#000" strokeWidth="1.5" fill="none" opacity="0.3" />
-          <path d="M0,400 Q400,300 800,400 T1600,400" stroke="#000" strokeWidth="1.5" fill="none" opacity="0.25" />
-          <path d="M0,600 Q200,500 400,600 T800,600" stroke="#000" strokeWidth="1.5" fill="none" opacity="0.2" />
-          <path d="M200,0 Q200,200 200,400 T200,800" stroke="#000" strokeWidth="1.5" fill="none" opacity="0.3" />
-          <path d="M600,0 Q600,200 600,400 T600,800" stroke="#000" strokeWidth="1.5" fill="none" opacity="0.25" />
-          <path d="M1000,0 Q1000,200 1000,400 T1000,800" stroke="#000" strokeWidth="1.5" fill="none" opacity="0.2" />
-        </svg>
-      </div>
-      
-      {/* Animated Background Shapes */}
-      <div className={styles.animatedShapes}>
-        <div className={styles.shape1}></div>
-        <div className={styles.shape2}></div>
-        <div className={styles.shape3}></div>
-        <div className={styles.shape4}></div>
-        <div className={styles.shape5}></div>
-        <div className={styles.shape6}></div>
-      </div>
-      
       <section className={styles.heroPanel}>
         <div className={styles.logoContainer}>
           <Image

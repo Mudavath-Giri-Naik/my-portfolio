@@ -8,8 +8,8 @@ export default function Achievements() {
         textAlign: 'center',
         marginTop: '2em'
       }}>
-        <h2 style={{ color: '#54595d', marginBottom: '1em' }}>Achievements</h2>
-        <p style={{ color: '#54595d', fontSize: '1.1em' }}>
+        <h2 style={{ color: 'var(--text)', marginBottom: '1em' }}>Achievements</h2>
+        <p style={{ color: 'var(--text)', fontSize: '1.1em' }}>
           Academic achievements, awards, and recognitions will be added here.
         </p>
       </div>

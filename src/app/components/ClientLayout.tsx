@@ -79,7 +79,6 @@ export default function ClientLayout({
               rel="noopener noreferrer"
               className={styles.socialIcon}
               title="LinkedIn"
-              style={{ color: "#0A66C2" }}
             >
               <FaLinkedin />
             </a>
@@ -89,7 +88,6 @@ export default function ClientLayout({
               rel="noopener noreferrer"
               className={styles.socialIcon}
               title="GitHub"
-              style={{ color: "#181717" }}
             >
               <FaGithub />
             </a>
@@ -99,7 +97,6 @@ export default function ClientLayout({
               rel="noopener noreferrer"
               className={styles.socialIcon}
               title="LeetCode"
-              style={{ color: "#FFA116" }}
             >
               <SiLeetcode />
             </a>
@@ -109,7 +106,6 @@ export default function ClientLayout({
               rel="noopener noreferrer"
               className={styles.socialIcon}
               title="CodeChef"
-              style={{ color: "#5B4638" }}
             >
               <SiCodechef />
             </a>
@@ -117,7 +113,6 @@ export default function ClientLayout({
               href="mailto:yourgirinaik@gmail.com"
               className={styles.socialIcon}
               title="Email"
-              style={{ color: "#EA4335" }}
             >
               <FaEnvelope />
             </a>
@@ -125,7 +120,6 @@ export default function ClientLayout({
               href="tel:+919652560237"
               className={styles.socialIcon}
               title="Phone"
-              style={{ color: "#1A73E8" }}
             >
               <FaPhone />
             </a>
