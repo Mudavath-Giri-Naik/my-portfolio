@@ -80,7 +80,7 @@ export default function Home() {
             key={section.id}
             id={section.id}
             className={styles.accordionCard}
-            defaultOpen={index === 0}
+            open={index === 0}
           >
             <summary>
               <div className={styles.summaryLeft}>
