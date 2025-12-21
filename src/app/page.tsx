@@ -1,13 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import styles from "./Home.module.css";
 import dynamic from "next/dynamic";
 import type { ReactNode } from "react";
 import { FiChevronDown, FiCode, FiGitBranch, FiAward, FiBookOpen, FiFlag } from "react-icons/fi";
-import { FiGithub, FiLinkedin } from "react-icons/fi";
-import { FaInstagram, FaEnvelope } from "react-icons/fa6";
-import { SiLeetcode, SiCodechef } from "react-icons/si";
 
 const Projects = dynamic(() => import("./projects/page"), { ssr: false });
 const Contributions = dynamic(() => import("./contributions/page"), { ssr: false });
@@ -33,48 +29,7 @@ const sections: SectionBlock[] = [
 export default function Home() {
   return (
     <div className={styles.heroPage}>
-      <section className={styles.heroPanel}>
-        <div className={styles.logoContainer}>
-          <Image
-            src="/profile.jpg"
-            alt="Giri Naik"
-            width={120}
-            height={120}
-            className={styles.profileLogo}
-            priority
-          />
-        </div>
-        <h1 className={styles.heroName}>GIRI NAIK</h1>
-        <p className={styles.heroTagline}>Student Developer</p>
-        <div className={styles.heroSocials}>
-          <a href="https://github.com/Mudavath-Giri-Naik" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-            <FiGithub />
-          </a>
-          <a href="https://www.linkedin.com/in/giri-naik/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <FiLinkedin />
-          </a>
-          <a href="https://leetcode.com/u/Mudavathgirinaik/" target="_blank" rel="noopener noreferrer" aria-label="LeetCode">
-            <SiLeetcode />
-          </a>
-          <a href="https://www.codechef.com/" target="_blank" rel="noopener noreferrer" aria-label="CodeChef">
-            <SiCodechef />
-          </a>
-          <a href="mailto:yourgirinaik@gmail.com" aria-label="Email">
-            <FaEnvelope />
-          </a>
-        </div>
-      </section>
-
       <section className={styles.accordionStack}>
-        <div className={styles.accordionIntro}>
-          <h2>About Me</h2>
-          <p>
-            I'm a passionate developer crafting beautiful digital experiences. With expertise in modern web technologies, 
-            AI & Machine Learning, I transform ideas into elegant, functional solutions. I believe in clean code, 
-            minimalist design, and making the web a better place one project at a time.
-          </p>
-        </div>
-
         {sections.map((section, index) => (
           <details
             key={section.id}

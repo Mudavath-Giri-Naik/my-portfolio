@@ -1,14 +1,38 @@
 :root {
-  --bg: #ffffff;
-  --surface: #ffffff;
-  --text: #000000;
-  --muted: #000000;
-  --border: #000000;
-  --primary: #000000;
-  --primary-600: #000000;
-  --primary-700: #000000;
+  --bg: #000000;
+  --surface: #1a1a1a;
+  --text: #ffffff;
+  --muted: #cccccc;
+  --border: #333333;
+  --primary: #ffffff;
+  --primary-600: #e0e0e0;
+  --primary-700: #cccccc;
   --ring: transparent;
   --shadow: none;
+}
+
+/* Light theme */
+:root.light {
+  --bg: #ffffff;
+  --surface: #f5f5f5;
+  --text: #000000;
+  --muted: #666666;
+  --border: #e0e0e0;
+  --primary: #000000;
+  --primary-600: #333333;
+  --primary-700: #666666;
+}
+
+/* Dark theme (default) */
+:root.dark {
+  --bg: #000000;
+  --surface: #1a1a1a;
+  --text: #ffffff;
+  --muted: #cccccc;
+  --border: #333333;
+  --primary: #ffffff;
+  --primary-600: #e0e0e0;
+  --primary-700: #cccccc;
 }
 
 html, body {

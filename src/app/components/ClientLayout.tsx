@@ -1,18 +1,9 @@
 'use client';
 
-import Image from "next/image";
 import { usePathname } from "next/navigation";
-import {
-  FaLinkedin,
-  FaGithub,
-  FaBirthdayCake,
-  FaMapMarkerAlt,
-  FaGraduationCap,
-  FaUniversity,
-} from "react-icons/fa";
-import { SiLeetcode, SiCodechef } from "react-icons/si";
-import { FaEnvelope, FaPhone } from "react-icons/fa6";
 import ContentNavigation from "./ContentNavigation";
+import ResumeHeader from "./ResumeHeader";
+import ThemeToggle from "./ThemeToggle";
 import "../globals.css";
 import styles from "../Home.module.css";
 
@@ -24,116 +15,27 @@ export default function ClientLayout({
   const pathname = usePathname();
 
   if (pathname === "/") {
-    return <div className={styles.homeStandalone}>{children}</div>;
+    return (
+      <div className={styles.homeStandalone}>
+        <ThemeToggle />
+        <ResumeHeader />
+        {children}
+      </div>
+    );
   }
 
   return (
-    <div className={styles.mainLayout}>
-      {/* --- Left Sidebar (Profile Card) --- */}
-      <aside className={styles.sidebar}>
-        <div className={styles.profileCard}>
-          <div className={styles.profileHeader}>
-            <Image
-              src="/profile.jpg"
-              alt="Giri Naik"
-              width={160}
-              height={160}
-              className={styles.profileImage}
-              priority
-            />
+    <>
+      <ThemeToggle />
+      <ResumeHeader />
+      <div className={styles.mainLayout}>
+        <main className={styles.contentArea}>
+          <ContentNavigation />
+          <div className={styles.contentWrapper}>
+            {children}
           </div>
-          <div className={styles.profileHeaderTextBelow}>
-            <h1>Giri Naik</h1>
-            <p>Student Developer</p>
-          </div>
-
-          <ul className={styles.detailsList}>
-            <li>
-              <FaBirthdayCake className={styles.detailIcon} />
-              <div className={styles.detailText}>08-03-2005</div>
-            </li>
-            <li>
-              <FaMapMarkerAlt className={styles.detailIcon} />
-              <div className={styles.detailText}>Vizag, India</div>
-            </li>
-            <li>
-              <FaUniversity className={styles.detailIcon} />
-              <div className={styles.detailText}>2023 - 2027</div>
-            </li>
-            <li>
-              <FaGraduationCap className={styles.detailIcon} />
-              <div className={styles.detailText}>B.Tech, CSE (AI&ML), 3rd Year</div>
-            </li>
-            <li>
-              <FaUniversity className={styles.detailIcon} />
-              <div className={styles.detailText}>
-                MVGR College of Engineering, Vizianagaram, 535005
-              </div>
-            </li>
-          </ul>
-
-          <div className={styles.socialLinks}>
-            <a
-              href="https://www.linkedin.com/in/giri-naik/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.socialIcon}
-              title="LinkedIn"
-            >
-              <FaLinkedin />
-            </a>
-            <a
-              href="https://github.com/Mudavath-Giri-Naik"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.socialIcon}
-              title="GitHub"
-            >
-              <FaGithub />
-            </a>
-            <a
-              href="https://leetcode.com/u/Mudavathgirinaik/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.socialIcon}
-              title="LeetCode"
-            >
-              <SiLeetcode />
-            </a>
-            <a
-              href="https://www.codechef.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.socialIcon}
-              title="CodeChef"
-            >
-              <SiCodechef />
-            </a>
-            <a
-              href="mailto:yourgirinaik@gmail.com"
-              className={styles.socialIcon}
-              title="Email"
-            >
-              <FaEnvelope />
-            </a>
-            <a
-              href="tel:+919652560237"
-              className={styles.socialIcon}
-              title="Phone"
-            >
-              <FaPhone />
-            </a>
-          </div>
-        </div>
-      </aside>
-
-      {/* --- Right Side Content Area --- */}
-      <main className={styles.contentArea}>
-        <ContentNavigation />
-        <div className={styles.contentWrapper}>
-          {children}
-        </div>
-      </main>
-    </div>
+        </main>
+      </div>
+    </>
   );
 } 

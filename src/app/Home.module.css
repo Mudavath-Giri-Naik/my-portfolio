@@ -1,10 +1,11 @@
 /* Main Layout Container */
 .mainLayout {
   display: flex;
-  max-width: 1180px;
-  margin: 2rem auto;
+  max-width: 900px;
+  margin: 1.5rem auto;
   gap: 2rem;
   padding: 1rem;
+  width: 100%;
 }
 
 @media (max-width: 768px) {
@@ -127,9 +128,10 @@
 
 /* --- Right Side Content Area --- */
 .contentArea {
-  flex: 2.5;
+  flex: 1;
   min-width: 0;
   padding-top: 0.2em;
+  width: 100%;
 }
 
 .contentNav {
@@ -271,12 +273,12 @@
 }
 
 .heroPage {
-  min-height: 100vh;
+  min-height: calc(100vh - 140px);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 4rem 1.5rem 5rem;
+  padding: 2rem 1.5rem 5rem;
   gap: 3rem;
   position: relative;
   z-index: 1;
@@ -284,7 +286,7 @@
 }
 
 .heroPanel {
-  width: min(680px, 100%);
+  width: min(900px, 100%);
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -351,7 +353,7 @@
 }
 
 .accordionStack {
-  width: min(700px, 100%);
+  width: min(900px, 100%);
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
@@ -509,5 +511,183 @@
 
   .accordionIntro p {
     font-size: 0.9rem;
+  }
+}
+
+/* --- Resume Header Styles --- */
+.resumeHeader {
+  width: 100%;
+  border-bottom: 1px solid var(--border);
+  background-color: var(--surface);
+}
+
+.resumeHeaderContent {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.25rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  justify-content: space-between;
+}
+
+.resumeHeaderImage {
+  flex-shrink: 0;
+}
+
+.resumeProfilePic {
+  width: 160px;
+  height: 160px;
+  border-radius: 0;
+  border: 1px solid var(--border);
+  object-fit: cover;
+  display: block;
+}
+
+.resumeHeaderInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.resumeHeaderName {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin: 0 0 0.4em 0;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.resumeHeaderTitle {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #999;
+  font-style: italic;
+}
+
+.resumeHeaderDescription {
+  font-size: 0.95rem;
+  color: var(--text);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.resumeHeaderEducation {
+  font-size: 0.85rem;
+  color: #999;
+  margin: 0.5em 0 0 0;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.resumeHeaderSocials {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  flex-shrink: 0;
+  width: calc(40px * 3 + 0.75rem * 2);
+  align-content: flex-start;
+  margin-left: auto;
+  justify-content: flex-end;
+}
+
+.resumeSocialIcon {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--border);
+  display: grid;
+  place-items: center;
+  border-radius: 0;
+  color: var(--text);
+  font-size: 1.1rem;
+  transition: none;
+  background: var(--surface);
+  text-decoration: none;
+}
+
+.resumeSocialIcon:hover {
+  background: var(--surface);
+  color: var(--text);
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .resumeHeaderContent {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    gap: 1rem;
+  }
+
+  .resumeProfilePic {
+    width: 140px;
+    height: 140px;
+  }
+
+  .resumeHeaderName {
+    font-size: 1.5rem;
+  }
+
+  .resumeHeaderTitle {
+    font-size: 0.9rem;
+    display: block;
+    margin-top: 0.2em;
+  }
+
+  .resumeHeaderDescription {
+    font-size: 0.9rem;
+  }
+
+  .resumeHeaderEducation {
+    font-size: 0.8rem;
+  }
+
+  .resumeHeaderSocials {
+    justify-content: center;
+    gap: 0.6rem;
+    margin-left: 0;
+    flex-wrap: nowrap;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .resumeSocialIcon {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+}
+
+/* Theme Toggle Button */
+.themeToggle {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  z-index: 1000;
+  transition: none;
+  border-radius: 0;
+}
+
+.themeToggle:hover {
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .themeToggle {
+    top: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
   }
 }
