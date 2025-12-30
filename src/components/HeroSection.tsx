@@ -20,7 +20,7 @@ const HeroSection = () => {
         <img
           src={developerImage}
           alt="Student Developer working on laptop"
-          className="h-[60vh] md:h-[70vh] lg:h-[80vh] object-contain animate-float"
+          className="h-[60vh] md:h-[70vh] lg:h-[80vh] object-contain"
         />
       </div>
 
