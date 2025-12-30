@@ -64,7 +64,7 @@ const SocialIcon = ({ type }: SocialIconProps) => {
   return (
     <a
       href="#"
-      className={`w-12 h-12 rounded-full border border-border bg-background flex items-center justify-center transition-all duration-300 ${getColorClass()} hover:text-background hover:scale-110`}
+      className={`w-10 h-10 md:w-12 md:h-12 rounded-full border border-border bg-background flex items-center justify-center transition-all duration-300 ${getColorClass()} hover:text-background hover:scale-110`}
     >
       {getIcon()}
     </a>
