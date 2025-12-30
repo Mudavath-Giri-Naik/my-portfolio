@@ -8,24 +8,24 @@ const Header = () => {
         {/* Logo */}
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 bg-foreground rounded-lg flex items-center justify-center">
-            <span className="text-background font-bold text-sm">D</span>
+            <span className="text-background font-bold text-sm">G</span>
           </div>
-          <span className="font-semibold text-foreground">dreamflow</span>
+          <span className="font-semibold text-foreground">Giri Naik</span>
         </div>
 
         {/* Navigation Links */}
         <div className="hidden md:flex items-center gap-6">
-          <a href="#features" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
-            Features
+          <a href="#projects" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
+            Projects
           </a>
-          <a href="#how-it-works" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
-            How it works
+          <a href="#open-source" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
+            Open Source
           </a>
-          <a href="#enterprise" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
-            Enterprise
+          <a href="#blogs" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
+            Blogs
           </a>
-          <a href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
-            Pricing
+          <a href="#certifications" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
+            Certifications
           </a>
         </div>
 
@@ -34,12 +34,6 @@ const Header = () => {
           <button className="p-2 rounded-full hover:bg-muted transition-colors">
             <Sun className="w-5 h-5 text-muted-foreground" />
           </button>
-          <Button variant="outline" className="rounded-full px-5 h-9 text-sm font-medium">
-            Login
-          </Button>
-          <Button className="rounded-full px-5 h-9 text-sm font-medium bg-foreground text-background hover:bg-foreground/90">
-            Get Started
-          </Button>
         </div>
       </nav>
     </header>
