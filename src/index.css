@@ -1,8 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 @layer base {
   :root {
@@ -42,7 +42,6 @@
     --social-instagram: 340 75% 54%;
     --social-linkedin: 201 100% 35%;
     --social-github: 0 0% 13%;
-    --social-upwork: 141 69% 45%;
     --social-medium: 0 0% 13%;
     --social-whatsapp: 142 70% 49%;
     --social-phone: 168 76% 42%;

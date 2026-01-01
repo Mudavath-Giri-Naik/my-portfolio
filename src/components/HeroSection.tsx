@@ -29,7 +29,6 @@ const HeroSection = () => {
         <SocialIcon type="instagram" />
         <SocialIcon type="linkedin" />
         <SocialIcon type="github" />
-        <SocialIcon type="upwork" />
         <SocialIcon type="medium" />
         <SocialIcon type="whatsapp" />
         <SocialIcon type="phone" />

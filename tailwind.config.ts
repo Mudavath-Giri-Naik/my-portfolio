@@ -68,7 +68,6 @@ export default {
           instagram: "hsl(var(--social-instagram))",
           linkedin: "hsl(var(--social-linkedin))",
           github: "hsl(var(--social-github))",
-          upwork: "hsl(var(--social-upwork))",
           medium: "hsl(var(--social-medium))",
           whatsapp: "hsl(var(--social-whatsapp))",
           phone: "hsl(var(--social-phone))",
