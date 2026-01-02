@@ -39,6 +39,7 @@
     /* Custom colors */
     --hero-text-primary: 217 72% 55%;
     --hero-text-secondary: 217 40% 78%;
+    --hero-text-glow: 217 91% 60%;
     --social-instagram: 340 75% 54%;
     --social-linkedin: 201 100% 35%;
     --social-github: 0 0% 13%;
@@ -85,8 +86,9 @@
     --input: 220 13% 20%;
     --ring: 217 91% 60%;
 
-    --hero-text-primary: 217 72% 55%;
-    --hero-text-secondary: 217 40% 40%;
+    --hero-text-primary: 0 0% 100%;
+    --hero-text-secondary: 0 0% 95%;
+    --hero-text-glow: 217 91% 70%;
 
     --sidebar-background: 220 13% 10%;
     --sidebar-foreground: 0 0% 98%;
@@ -117,5 +119,22 @@
   
   .hero-text-secondary {
     color: hsl(var(--hero-text-secondary));
+  }
+
+  /* Dark mode hero text with gradient and glow effect - white to grey from top to bottom */
+  .dark .hero-text-primary {
+    background: linear-gradient(to bottom, #ffffff 0%, #e5e7eb 50%, #9ca3af 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 60px rgba(165, 180, 252, 0.4), 0 0 100px rgba(165, 180, 252, 0.2);
+  }
+
+  .dark .hero-text-secondary {
+    background: linear-gradient(to bottom, #f9fafb 0%, #d1d5db 50%, #6b7280 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 50px rgba(129, 140, 248, 0.35), 0 0 90px rgba(129, 140, 248, 0.15);
   }
 }

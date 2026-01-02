@@ -1,6 +1,6 @@
 # Giri Naik | Student Developer Portfolio
 
-A modern, responsive portfolio website showcasing web development projects and skills.
+A modern, responsive portfolio website showcasing web development skills.
 
 ## 🚀 Quick Start
 

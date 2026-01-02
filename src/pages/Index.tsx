@@ -1,15 +1,17 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-import ProjectsSection from "@/components/ProjectsSection";
-import OpenSourceSection from "@/components/OpenSourceSection";
+import { GridBackground } from "@/components/GridBackground";
+import { DotBackground } from "@/components/DotBackground";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <HeroSection />
-      <ProjectsSection />
-      <OpenSourceSection />
+      <GridBackground>
+        <DotBackground>
+          <HeroSection />
+        </DotBackground>
+      </GridBackground>
     </div>
   );
 };

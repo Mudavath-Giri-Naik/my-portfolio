@@ -1,8 +1,17 @@
-import { Sun, Menu, X } from "lucide-react";
-import { useState } from "react";
+import { Sun, Moon, Menu, X } from "lucide-react";
+import { useState, useEffect } from "react";
+import { useTheme } from "next-themes";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const currentTheme = mounted ? theme : "light";
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between py-4 px-4 md:px-6">
@@ -28,8 +37,16 @@ const Header = () => {
       {/* Right Section */}
       <div className="flex items-center gap-2">
         {/* Theme Toggle */}
-        <button className="p-2 rounded-full hover:bg-muted transition-colors">
-          <Sun className="w-5 h-5 text-muted-foreground" />
+        <button 
+          className="p-2 rounded-full hover:bg-muted transition-colors"
+          onClick={() => setTheme(currentTheme === "dark" ? "light" : "dark")}
+          aria-label="Toggle theme"
+        >
+          {currentTheme === "dark" ? (
+            <Sun className="w-5 h-5 text-muted-foreground" />
+          ) : (
+            <Moon className="w-5 h-5 text-muted-foreground" />
+          )}
         </button>
         
         {/* Mobile Menu Button */}

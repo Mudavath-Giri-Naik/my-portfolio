@@ -4,19 +4,19 @@ import { ChevronDown } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-background pt-16 md:pt-20 px-4">
-      {/* Background Text */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none select-none px-2">
-        <h1 className="text-[4rem] sm:text-[6rem] md:text-[10rem] lg:text-[14rem] font-black leading-none tracking-tight text-hero-primary text-center">
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-16 md:pt-20 px-4">
+      {/* Background Text - behind image */}
+      <div className="absolute inset-0 z-0 flex flex-col items-center justify-center pointer-events-none select-none px-2">
+        <h1 className="text-[4rem] sm:text-[6rem] md:text-[10rem] lg:text-[14rem] font-black leading-none tracking-tight text-hero-primary text-center dark:font-extrabold dark:tracking-[-0.02em]">
           Student
         </h1>
-        <h1 className="text-[4rem] sm:text-[6rem] md:text-[10rem] lg:text-[14rem] font-black leading-none tracking-tight text-hero-secondary -mt-4 sm:-mt-6 md:-mt-10 lg:-mt-14 text-center">
+        <h1 className="text-[4rem] sm:text-[6rem] md:text-[10rem] lg:text-[14rem] font-black leading-none tracking-tight text-hero-secondary -mt-4 sm:-mt-6 md:-mt-10 lg:-mt-14 text-center dark:font-extrabold dark:tracking-[-0.02em]">
           Developer
         </h1>
       </div>
 
-      {/* Developer Image */}
-      <div className="relative z-10 flex items-center justify-center w-full">
+      {/* Developer Image - on top of background text */}
+      <div className="relative z-20 flex items-center justify-center w-full">
         <img
           src={developerImage}
           alt="Student Developer working on laptop"
@@ -25,7 +25,7 @@ const HeroSection = () => {
       </div>
 
       {/* Social Icons */}
-      <div className="relative z-20 flex items-center justify-center flex-wrap gap-3 md:gap-4 mt-6 md:mt-8 px-4">
+      <div className="relative z-30 flex items-center justify-center flex-wrap gap-3 md:gap-4 mt-6 md:mt-8 px-4">
         <SocialIcon type="instagram" />
         <SocialIcon type="linkedin" />
         <SocialIcon type="github" />
@@ -35,7 +35,7 @@ const HeroSection = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="relative z-20 flex flex-col items-center gap-2 mt-8 animate-pulse-soft">
+      <div className="relative z-30 flex flex-col items-center gap-2 mt-8 animate-pulse-soft">
         <ChevronDown className="w-5 h-5 text-muted-foreground" />
         <span className="text-sm text-muted-foreground">to explore</span>
       </div>
